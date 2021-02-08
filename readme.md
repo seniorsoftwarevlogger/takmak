@@ -1,5 +1,7 @@
-65% orthogonal staggered column split keyboard
+Takmak
 ==
+
+65% orthogonal staggered column split keyboard you've been looking for!   
 
 You may not use this for any commercial purpose.
 
