@@ -23,3 +23,8 @@ Components
 71 x Chery MX compatible switches  
 71 x 1N4148 diodes  
 Wires  
+
+Why the name?
+--
+
+Takmak is the name of a famous rock in [Stolby](https://en.wikipedia.org/wiki/Stolby_Nature_Sanctuary) national park that is located nearby my home town Krasnoyarsk. I guess the older I get the more nostalgic I become thus the name.
