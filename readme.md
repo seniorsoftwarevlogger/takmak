@@ -8,7 +8,7 @@ You may not use this for any commercial purpose.
 Video
 --
 
-[![Отчетное видео](https://img.youtube.com/vi/rlwhCginQdo/0.jpg)](https://www.youtube.com/watch?v=rlwhCginQdo "Отчетное видео")
+[![Отчетное видео](https://img.youtube.com/vi/rlwhCginQdo/maxresdefault.jpg)](https://www.youtube.com/watch?v=rlwhCginQdo "Отчетное видео")
 
 Layout
 --
