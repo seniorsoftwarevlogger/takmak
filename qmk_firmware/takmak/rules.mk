@@ -22,4 +22,4 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 SPLIT_KEYBOARD = yes
 
-DEFAULT_FOLDER = ssv_split
+DEFAULT_FOLDER = takmak
