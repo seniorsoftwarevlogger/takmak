@@ -8,7 +8,7 @@ You may not use this for any commercial purpose.
 Layout
 --
 
-http://www.keyboard-layout-editor.com/#/gists/c3e709013b8413fe901a2af3728c1977
+http://www.keyboard-layout-editor.com/#/gists/02badad523ed5f81657f6f451307866d
 
 Components
 --
