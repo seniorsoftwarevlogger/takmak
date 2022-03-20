@@ -7,7 +7,7 @@ You may not use this for any commercial purpose.
 
 Layout
 --
-
+![alt text](schemes/main.JPG)
 http://www.keyboard-layout-editor.com/#/gists/02badad523ed5f81657f6f451307866d
 
 Components
