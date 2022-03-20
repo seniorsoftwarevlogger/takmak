@@ -19,7 +19,9 @@ Components
 2 x TRRS breakouts  
 71 x Chery MX compatible switches  
 71 x 1N4148 diodes  
-Wires  
+Wires
+
+The firmware process is described here: https://docs.qmk.fm/
 
 Why the name?
 --
