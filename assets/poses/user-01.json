@@ -1,0 +1,38 @@
+{
+  "schema": "takmak.scene.pose",
+  "version": 1,
+  "savedAt": "2026-10-11T19:24:45.509Z",
+  "units": "mm and degrees",
+  "state": {
+    "profile": "low",
+    "side": "right",
+    "gap": 14,
+    "lift": 12,
+    "legends": true,
+    "left": {
+      "yaw": 13,
+      "tilt": 9,
+      "roll": -13
+    },
+    "right": {
+      "yaw": -10,
+      "tilt": 21,
+      "roll": 15
+    }
+  },
+  "camera": {
+    "position": [
+      6.076156614599521,
+      639.829984885655,
+      88.19970017191844
+    ],
+    "target": [
+      10.473659439165843,
+      24.69674754473728,
+      0.9533928291190888
+    ],
+    "fov": 35
+  },
+  "geometry": "STEP exports supplied 2026-10-11",
+  "limitations": "Illustrative keycaps and switches; no PCB or mechanical fit verification."
+}

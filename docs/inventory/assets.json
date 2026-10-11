@@ -1,0 +1,1270 @@
+{
+  "inventory_date": "2026-10-11",
+  "scope": "Local Takmak project, related workspace repositories and referenced KiCad libraries. No remote synchronization, electrical verification or assembly fit test. Repository status captured before inventory report completion.",
+  "models": [
+    {
+      "path": "3d models/Encoder Knob 16mm 3mm/Encoder Knob 16mm 3mm - Low Profile Button.glb",
+      "bytes": 132016,
+      "sha256": "0fd7af50e796290084c2f876648c6c804ee4906c872624d91088084e9a3eaf41",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 33,
+      "triangles": 2084,
+      "bounds_min_m": [
+        0.05216356739401817,
+        -0.012500000186264515,
+        -0.00925000011920929
+      ],
+      "bounds_max_m": [
+        0.07063643634319305,
+        0.0005000000237487257,
+        0.00925000011920929
+      ],
+      "dimensions_mm": [
+        18.473,
+        13.0,
+        18.5
+      ],
+      "center_mm": [
+        61.4,
+        -6.0,
+        0.0
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Encoder Knob 16mm 3mm/Encoder Knob 16mm 3mm - Low Profile Screen.glb",
+      "bytes": 131720,
+      "sha256": "2d61d608ca3b8d5d3d6a72480db62f3ad16944e8d4fbc818faf932a2dc2ccfea",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 33,
+      "triangles": 2084,
+      "bounds_min_m": [
+        -0.00923643447458744,
+        -0.012500000186264515,
+        -0.00925000011920929
+      ],
+      "bounds_max_m": [
+        0.00923643447458744,
+        0.0,
+        0.00925000011920929
+      ],
+      "dimensions_mm": [
+        18.473,
+        12.5,
+        18.5
+      ],
+      "center_mm": [
+        0.0,
+        -6.25,
+        0.0
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Encoder Knob 16mm 3mm/Encoder Knob 16mm 3mm - Regular.glb",
+      "bytes": 131904,
+      "sha256": "f48cb2487f7988655909ef16877f2292dab1055c88f7b8ab66c085773d6d598c",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 33,
+      "triangles": 2084,
+      "bounds_min_m": [
+        0.010873566381633282,
+        -0.016499999910593033,
+        -0.00925000011920929
+      ],
+      "bounds_max_m": [
+        0.029346434399485588,
+        0.0,
+        0.00925000011920929
+      ],
+      "dimensions_mm": [
+        18.473,
+        16.5,
+        18.5
+      ],
+      "center_mm": [
+        20.11,
+        -8.25,
+        0.0
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Left Low Top.glb",
+      "bytes": 924044,
+      "sha256": "9c9d2dc4f1d84994e77dc879e934e313ba00ab5f17c2f7286047a99638a74631",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 362,
+      "triangles": 12636,
+      "bounds_min_m": [
+        -0.15287283062934875,
+        0.09652867913246155,
+        -0.0020000000949949026
+      ],
+      "bounds_max_m": [
+        -0.008623937144875526,
+        0.21194197237491608,
+        0.004000000189989805
+      ],
+      "dimensions_mm": [
+        144.249,
+        115.413,
+        6.0
+      ],
+      "center_mm": [
+        -80.748,
+        154.235,
+        1.0
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Left Regular Top.glb",
+      "bytes": 999244,
+      "sha256": "8ec53d565a874636dd520bcf75e2f34f850fe8157745bbda2359aefb4fac85ad",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 394,
+      "triangles": 13456,
+      "bounds_min_m": [
+        -0.15287283062934875,
+        -0.05347132310271263,
+        -0.004000000189989805
+      ],
+      "bounds_max_m": [
+        -0.008623937144875526,
+        0.0619419664144516,
+        0.006500000134110451
+      ],
+      "dimensions_mm": [
+        144.249,
+        115.413,
+        10.5
+      ],
+      "center_mm": [
+        -80.748,
+        4.235,
+        1.25
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Left Reset Button.glb",
+      "bytes": 36376,
+      "sha256": "00b0632aa23809d7a6b82ed26abeedf7f7c435bda18fe5c07ec4b597a581d1e2",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 7,
+      "triangles": 620,
+      "bounds_min_m": [
+        -0.10877174884080887,
+        0.013019617646932602,
+        -0.011873004026710987
+      ],
+      "bounds_max_m": [
+        -0.09677357226610184,
+        0.02505759336054325,
+        -0.007996509782969952
+      ],
+      "dimensions_mm": [
+        11.998,
+        12.038,
+        3.876
+      ],
+      "center_mm": [
+        -102.773,
+        19.039,
+        -9.935
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Left Universal Bottom.glb",
+      "bytes": 593372,
+      "sha256": "4c5220826d26f11f37e008d820161a67ad9e69aec3b792e9b4761c72338d6b71",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 146,
+      "triangles": 10158,
+      "bounds_min_m": [
+        -0.15287283062934875,
+        -0.05347105488181114,
+        -0.016048967838287354
+      ],
+      "bounds_max_m": [
+        -0.008623937144875526,
+        0.0619419664144516,
+        -0.004000000189989805
+      ],
+      "dimensions_mm": [
+        144.249,
+        115.413,
+        12.049
+      ],
+      "center_mm": [
+        -80.748,
+        4.235,
+        -10.024
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Right Low Top.glb",
+      "bytes": 924212,
+      "sha256": "c627eae144486f25836df4964f24f53afe8c76e5b72167ddbbaab310057d58ea",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 402,
+      "triangles": 10988,
+      "bounds_min_m": [
+        0.003106330521404743,
+        0.09652867913246155,
+        -0.0020000000949949026
+      ],
+      "bounds_max_m": [
+        0.16640524566173553,
+        0.21194197237491608,
+        0.004000000189989805
+      ],
+      "dimensions_mm": [
+        163.299,
+        115.413,
+        6.0
+      ],
+      "center_mm": [
+        84.756,
+        154.235,
+        1.0
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Right Regular Top.glb",
+      "bytes": 987332,
+      "sha256": "4cb56d2ba40197c7362cc10d778f34994d2d0c38daf82fb12da0fe67fc8dd999",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 430,
+      "triangles": 11662,
+      "bounds_min_m": [
+        0.003106330521404743,
+        -0.05347132310271263,
+        -0.004000000189989805
+      ],
+      "bounds_max_m": [
+        0.16640524566173553,
+        0.0619419664144516,
+        0.006500000134110451
+      ],
+      "dimensions_mm": [
+        163.299,
+        115.413,
+        10.5
+      ],
+      "center_mm": [
+        84.756,
+        4.235,
+        1.25
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Right Reset Button.glb",
+      "bytes": 36384,
+      "sha256": "581f2837185b2926d9536bb993b08b4e79ebb012691fafb69eb7931302f1a375",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 7,
+      "triangles": 620,
+      "bounds_min_m": [
+        0.09125685691833496,
+        0.013019617646932602,
+        -0.011873004026710987
+      ],
+      "bounds_max_m": [
+        0.1032550260424614,
+        0.02505759336054325,
+        -0.007996509782969952
+      ],
+      "dimensions_mm": [
+        11.998,
+        12.038,
+        3.876
+      ],
+      "center_mm": [
+        97.256,
+        19.039,
+        -9.935
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    },
+    {
+      "path": "3d models/Takmak/Takmak - Right Universal Bottom.glb",
+      "bytes": 596888,
+      "sha256": "a2811537b8a92cb5b4a28d19e8dfa825b1eff30ba8d819c99ca8888fcc0e1fd3",
+      "generator": "ONSHAPE BY PTC INC, 1.222",
+      "nodes": 1,
+      "meshes": 1,
+      "primitives": 147,
+      "triangles": 10236,
+      "bounds_min_m": [
+        0.003106330521404743,
+        -0.05347074940800667,
+        -0.01604996994137764
+      ],
+      "bounds_max_m": [
+        0.16640524566173553,
+        0.0619419664144516,
+        -0.004000000189989805
+      ],
+      "dimensions_mm": [
+        163.299,
+        115.413,
+        12.05
+      ],
+      "center_mm": [
+        84.756,
+        4.236,
+        -10.025
+      ],
+      "external_buffers": [],
+      "material_count": 1
+    }
+  ],
+  "files": [
+    {
+      "path": "/Users/dima/Documents/KiCad/6.0/3dmodels/ARDUINO PRO MICRO.STEP",
+      "bytes": 10770354,
+      "sha256": "f4b618ac5868faf9a09252c05ae78234d3a55557b1dca7c68b71455003ae09c1"
+    },
+    {
+      "path": "/Users/dima/Documents/KiCad/6.0/3dmodels/Kailh Choc Low Profile Switch.step",
+      "bytes": 1361875,
+      "sha256": "63336eb63865989f11ebba218fe0938a9b5ceab8faab7908d9ee676619460e96"
+    },
+    {
+      "path": "/Users/dima/Documents/KiCad/marbastlib/3d/LED_SK6812MINI-E.step",
+      "bytes": 160275,
+      "sha256": "3ac3216b8326eab9723e59a85ddc4ed0f98164b870653bd9f67afcf1f8d299c2"
+    },
+    {
+      "path": "/Users/dima/Documents/KiCad/marbastlib/3d/ROT_EC11E.step",
+      "bytes": 1079172,
+      "sha256": "e08cc98625f0d48fd46121cd303cca94a85d344ad137d990f970cb76927af110"
+    },
+    {
+      "path": "/Users/dima/Documents/KiCad/marbastlib/3d/ROT_EC11N.step",
+      "bytes": 968143,
+      "sha256": "833cb8a7dc50ec07ec4c0a8a4deb4c1bf4c0028d1e822678c9368ddfb9ff2b3f"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/config/left/keyboard_config.h",
+      "bytes": 3881,
+      "sha256": "2750616049b51f6e2ef53f8857ffa0f7007daecf72766d170b05a68c8a855155"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/config/right/keyboard_config.h",
+      "bytes": 3882,
+      "sha256": "08e3877a011b42c6aca3d3520ab750f64c4d9c421ac6bc414f8afa2f09c58198"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/hardware/feather52832/bluemicrov2_0c/hardware_config.h",
+      "bytes": 2888,
+      "sha256": "e89acea642349494eec2ec1d31ac6c5561dd4583de6d85e1c27ac9e3492a1fcf"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/hardware/feather52832/bluemicrov2_1/hardware_config.h",
+      "bytes": 2888,
+      "sha256": "e89acea642349494eec2ec1d31ac6c5561dd4583de6d85e1c27ac9e3492a1fcf"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/hardware/feather52832/bluenano2.0/hardware_config.h",
+      "bytes": 1963,
+      "sha256": "fe696d9682bc717d1d6e6b3da3a46796112a3ca84aa5a767551b1755f87b1e5c"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/hardware/pca10056/bluemicro840v1_0/hardware_config.h",
+      "bytes": 2294,
+      "sha256": "b20c7ab159d7a79ab680ad1a8f16d98cff75c53a18818d40688dd4c08344cdfa"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/hardware/pca10056/nicenano/hardware_config.h",
+      "bytes": 2360,
+      "sha256": "52632f7c4ccbcf825cbb8b2b08416676e74d8149e0fe20a5ca61c4a6cfafc253"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/keymaps/default/keymap.cpp",
+      "bytes": 16630,
+      "sha256": "071df2128cbc25455404de8fabfb9f0d92c06246fb7e0b5da62bfc88d55d05fe"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/keymaps/default/keymap.h",
+      "bytes": 2702,
+      "sha256": "3bf28b81ad848e92e45cc75a0eb106063adf4f65d784cae7aa4c1ea1d1ab263a"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/keymaps/ohkeycaps/keymap.cpp",
+      "bytes": 21557,
+      "sha256": "6f751d7cbd27814d18e3e4c4f3210bb65fcfe81548940ce01f83593181a3cec7"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE/firmware/keyboards/takmak/keymaps/ohkeycaps/keymap.h",
+      "bytes": 3373,
+      "sha256": "170d16762019ac64633b3c3b4f967bd66ca2b5a553036d9bca2e8a0d9fd4d873"
+    },
+    {
+      "path": "/Volumes/4T/workspace/kicad-footprints/keyswitch-kicad-library/library/3dmodels/3d-library.3dshapes/SW_Cherry_MX_PCB.stp",
+      "bytes": 2769044,
+      "sha256": "ddf0fb3a776faa6105303efb98e39645e044c43b3ac03cbfe75d8eda28e297f4"
+    },
+    {
+      "path": "/Volumes/4T/workspace/kicad-footprints/keyswitch-kicad-library/library/3dmodels/3d-library.3dshapes/SW_Cherry_MX_Plate.stp",
+      "bytes": 2710651,
+      "sha256": "9cfc2322ab26bd304066fde2c3373a80951a32e9bffe52388589b9a5e6ac9182"
+    },
+    {
+      "path": "/Volumes/4T/workspace/kicad-footprints/keyswitch-kicad-library/library/3dmodels/3d-library.3dshapes/SW_Hotswap_Kailh_Choc_V1.stp",
+      "bytes": 1123339,
+      "sha256": "081d32412d8a6d4f5e5e9b61317f8162e508741cd2ff31abf07aa7a007bc7b10"
+    },
+    {
+      "path": "/Volumes/4T/workspace/kicad-footprints/keyswitch-kicad-library/library/3dmodels/3d-library.3dshapes/SW_Hotswap_Kailh_MX.stp",
+      "bytes": 2649877,
+      "sha256": "31dd9ab0a892e02f43c13f07c3d78f83dbe64390178e64b2f1f6df4849935e5b"
+    },
+    {
+      "path": "/Volumes/4T/workspace/kicad-footprints/keyswitch-kicad-library/library/3dmodels/3d-library.3dshapes/SW_Kailh_Choc_V1.stp",
+      "bytes": 1326157,
+      "sha256": "669d72c083f226e1f9ee9e9dc8424c18e9641984223ba5422a1235d773a6a9a8"
+    },
+    {
+      "path": "/Volumes/4T/workspace/kicad-my.pretty/MX_Kailh_EC11.kicad_mod",
+      "bytes": 17919,
+      "sha256": "61ef0002924483c639dcb3b78e60a272215e651d3523200f87ae5074deeb1d82"
+    },
+    {
+      "path": "/Volumes/4T/workspace/prospector-zmk-module/README.md",
+      "bytes": 3101,
+      "sha256": "810452bdddf753bb509e6da4fa68400a0d62cadf71b7b4f734219547451805be"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/.gitignore",
+      "bytes": 10,
+      "sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Encoder Knob 16mm 3mm/Encoder Knob 16mm 3mm - Low Profile Button.glb",
+      "bytes": 132016,
+      "sha256": "0fd7af50e796290084c2f876648c6c804ee4906c872624d91088084e9a3eaf41"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Encoder Knob 16mm 3mm/Encoder Knob 16mm 3mm - Low Profile Screen.glb",
+      "bytes": 131720,
+      "sha256": "2d61d608ca3b8d5d3d6a72480db62f3ad16944e8d4fbc818faf932a2dc2ccfea"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Encoder Knob 16mm 3mm/Encoder Knob 16mm 3mm - Regular.glb",
+      "bytes": 131904,
+      "sha256": "f48cb2487f7988655909ef16877f2292dab1055c88f7b8ab66c085773d6d598c"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Left Low Top.glb",
+      "bytes": 924044,
+      "sha256": "9c9d2dc4f1d84994e77dc879e934e313ba00ab5f17c2f7286047a99638a74631"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Left Regular Top.glb",
+      "bytes": 999244,
+      "sha256": "8ec53d565a874636dd520bcf75e2f34f850fe8157745bbda2359aefb4fac85ad"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Left Reset Button.glb",
+      "bytes": 36376,
+      "sha256": "00b0632aa23809d7a6b82ed26abeedf7f7c435bda18fe5c07ec4b597a581d1e2"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Left Universal Bottom.glb",
+      "bytes": 593372,
+      "sha256": "4c5220826d26f11f37e008d820161a67ad9e69aec3b792e9b4761c72338d6b71"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Right Low Top.glb",
+      "bytes": 924212,
+      "sha256": "c627eae144486f25836df4964f24f53afe8c76e5b72167ddbbaab310057d58ea"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Right Regular Top.glb",
+      "bytes": 987332,
+      "sha256": "4cb56d2ba40197c7362cc10d778f34994d2d0c38daf82fb12da0fe67fc8dd999"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Right Reset Button.glb",
+      "bytes": 36384,
+      "sha256": "581f2837185b2926d9536bb993b08b4e79ebb012691fafb69eb7931302f1a375"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/Takmak/Takmak - Right Universal Bottom.glb",
+      "bytes": 596888,
+      "sha256": "a2811537b8a92cb5b4a28d19e8dfa825b1eff30ba8d819c99ca8888fcc0e1fd3"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left-User_Drawings.svg",
+      "bytes": 79025,
+      "sha256": "746fca392e3bc24cc4df770d5c8cbbb2a6e889be04e6712602ed3dbcdc81a995"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left-backups/Takmak-left-2025-04-13_141629.zip",
+      "bytes": 1359126,
+      "sha256": "dfec75cbfe1b6e4ce94f41ada9b3c1ca66eaa7e129651593c08f5f089e92e698"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left-rounded-backups/Takmak-left-rounded-2025-04-10_213226.zip",
+      "bytes": 1363808,
+      "sha256": "47fa1447f9af120188fd5e8f5ee68e70a160b0e886b62e833bf2f59a51e2c183"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left-rounded.kicad_pcb",
+      "bytes": 3115239,
+      "sha256": "0fa475378983dcaa28dd2e1ece46d09f1c05370da0905b892cbab2d6b783a932"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left-rounded.kicad_pro",
+      "bytes": 9119,
+      "sha256": "d7eb4164327ae0ac0f6d3cbeb1300cc1d81e52d737e3865353ae1354734fb786"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left.kicad_pcb",
+      "bytes": 3092707,
+      "sha256": "22d5e5c45d71d1b861d6d6006d36853d556737335c3c234af819bfec2d8ddf77"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left.kicad_prl",
+      "bytes": 1179,
+      "sha256": "a546d5b34d4ed196c505b1fb592074ffd22b7255695b1d0d33dcc872c220cacd"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left.kicad_pro",
+      "bytes": 9111,
+      "sha256": "cf1a2c1b21d366bc2a11bb5c2aaa69ae18a8aa504ca98e92482ab3fd79b084a3"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left.kicad_sch",
+      "bytes": 121282,
+      "sha256": "56e1e7fadd47f0a86be4b6bdc7b5c3099e169bbd35217ef39295c5437035619d"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left.round-tracks-config",
+      "bytes": 19,
+      "sha256": "344a16ee75f63671eba57a9e83868482e04aa582fac4d58f69b3db4284edb6ea"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak-backups/takmak-2026-10-11_201135.zip",
+      "bytes": 874808,
+      "sha256": "16261b536449ac1c7338596ad57d3b095f4cb442178f6958fb47efdc8fd39f75"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak-cache.lib",
+      "bytes": 5289,
+      "sha256": "dbee7827a906a91131324d97856fa3f3bf8c2ad914207601cf1e79a124180ab5"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.kicad_pcb",
+      "bytes": 3466141,
+      "sha256": "e605eb095c49f0907df3bc01aec0664778e1b57849a4b7034fec7e4d1233284e"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.kicad_pcb-bak",
+      "bytes": 271222,
+      "sha256": "8807f899f0c13bb4d75f231949a684443d96242702750dcb311033de0b23ec9e"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.kicad_prl",
+      "bytes": 2388,
+      "sha256": "2d90b5ee1104237caaf1f98d4c01055b41fe4c93a08e7fef8108d4926f36ff59"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.kicad_pro",
+      "bytes": 16788,
+      "sha256": "a18dcc8e3a52ca45513a30ed606dee6e11e5595f6e27c5e749c21248cbbc5204"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.kicad_sch",
+      "bytes": 303480,
+      "sha256": "58b6e8d29b8dc12e304f89c1dff7afb762a6513e6427649d386c3257ca2a937b"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.pro",
+      "bytes": 687,
+      "sha256": "395f6813ade8518b15fc1746101e38e60ede3a0ff37dba2cf379c74a9118a0cc"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.sch",
+      "bytes": 38233,
+      "sha256": "3b0bf2c81e585398019141180aef8073bfb467a53c0eb2503217e6445d16c7dd"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.sch-bak",
+      "bytes": 38525,
+      "sha256": "899967c4b08bf0e9883e374798781490b03bced59a6baa067e461008800ecc6b"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/qmk_firmware/takmak/Makefile",
+      "bytes": 55,
+      "sha256": "c49190ef7724ae3f8f0ac6c9205d63086ccda309a4d818f40f0c7cfaf6f09abd"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/qmk_firmware/takmak/config.h",
+      "bytes": 1800,
+      "sha256": "452762ea1f887fd713bad269a994763fb1cfd89c33480167aa2df9ff6bcd8b5d"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/qmk_firmware/takmak/keymaps/default/keymap.c",
+      "bytes": 3396,
+      "sha256": "2a544046d4ec14931cd96e992f029140705c4b8c1ec9d4fad6bf373406c83cd5"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/qmk_firmware/takmak/rules.mk",
+      "bytes": 965,
+      "sha256": "b554cc026f306bbcf7fc72c09d3302dbbaa91f2f501659b0a2c167b213bfee99"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/qmk_firmware/takmak/takmak.c",
+      "bytes": 20,
+      "sha256": "c13f3869b5f6011c4ed25f94439531bd7668476c56cd0891c182f5689fc3b62a"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/qmk_firmware/takmak/takmak.h",
+      "bytes": 1171,
+      "sha256": "9cee77e2a74213e91f0feeb27a0869e4a0203e8f7b26e356ddafdfc4dd787110"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/readme.md",
+      "bytes": 471,
+      "sha256": "df62fbd878206342eba4552bedfdba523f83121049a74a904e310d84b3957422"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak-zmk/config/takmak.conf",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak-zmk/config/takmak.keymap",
+      "bytes": 7858,
+      "sha256": "6112c5e03627d10cb8b3f5ef2d502bc98b3d2a56bc71b072fa348bfb1c314b4a"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak-zmk/config/west.yml",
+      "bytes": 219,
+      "sha256": "6c8ac90a37929260b2f961e0bc4d237be676a6fa967f67e84ce255fa5cc4db54"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/Makefile",
+      "bytes": 55,
+      "sha256": "c49190ef7724ae3f8f0ac6c9205d63086ccda309a4d818f40f0c7cfaf6f09abd"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/config.h",
+      "bytes": 1958,
+      "sha256": "7fc7df1962294ead1fbf48d7adfb7e2d81faac036d2a4c35df6be85195a20317"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/keymaps/default/keymap.c",
+      "bytes": 2583,
+      "sha256": "fd21ace74a0db4ee8db75731aa58cc50f30615b242170b61051c6fa86f2a7852"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/rules.mk",
+      "bytes": 1056,
+      "sha256": "5deeeccf05ead91981654e7a5abc3dd5c49da4c7abc82907a70c52d6359aa6f8"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/takmak.c",
+      "bytes": 20,
+      "sha256": "c13f3869b5f6011c4ed25f94439531bd7668476c56cd0891c182f5689fc3b62a"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/takmak.h",
+      "bytes": 1171,
+      "sha256": "9cee77e2a74213e91f0feeb27a0869e4a0203e8f7b26e356ddafdfc4dd787110"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk/keyboards/takmak/vial.json",
+      "bytes": 899,
+      "sha256": "4bb7f83349f1f0cf1b33ad3de467ab5d22261602b0495341061ec96d9b0d36c2"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/Kconfig.defconfig",
+      "bytes": 290,
+      "sha256": "5efd0d8ce34da3dc9dd2155fc56c940e267fa276f2118e04495c99dd0edb23fc"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/Kconfig.shield",
+      "bytes": 216,
+      "sha256": "cd209c09c7b196de34a251b53e6d536be76b3696d8e15a28f1a86179650d0b08"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/boards/nice_nano.overlay",
+      "bytes": 979,
+      "sha256": "64dae36330fa51fe7b459fec9c26ada2a0967e69f48550de256afe116dc4f663"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/boards/nice_nano_v2.overlay",
+      "bytes": 979,
+      "sha256": "d8d9b41587c3b4ee96651438b0bfb389927ae75a33d1281f84267963922b31c0"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak.conf",
+      "bytes": 552,
+      "sha256": "7dc32e51c028781e735068d83a794366cc4c98d161e19c64f1a6bb2f77d2a721"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak.dtsi",
+      "bytes": 2220,
+      "sha256": "db6d878cbf569da96a38260957fb66fff2b67e2a02c67ed3a1e775265426a0ea"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak.keymap",
+      "bytes": 7811,
+      "sha256": "cfba2ff165e60b141106901db6032493a78edc35bc62693777532b68685b1e31"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak.zmk.yml",
+      "bytes": 243,
+      "sha256": "8252a8ed258f8698e7a9de8f021b8c3a7907dbd5a092e4bae8989a9f41b30741"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak_left.conf",
+      "bytes": 594,
+      "sha256": "5c8dc1778250237674b2658a6d4c174df279894583d51f4ff60786d736ebed56"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak_left.overlay",
+      "bytes": 859,
+      "sha256": "e2825ae3a6d3ae59d109032886a564409ea7ad5c4262b2a464786beb76efffd9"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak_right.conf",
+      "bytes": 552,
+      "sha256": "7dc32e51c028781e735068d83a794366cc4c98d161e19c64f1a6bb2f77d2a721"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk/app/boards/shields/takmak/takmak_right.overlay",
+      "bytes": 978,
+      "sha256": "63fa36e079eadd2ed3cadb7800b336b972c60eb2b9f28880a8f9d5e6251fe699"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-dongle-screen/README.md",
+      "bytes": 13843,
+      "sha256": "0e0e0af6da4345a732a4e0127d1af995bb3f30928a4a0ec81a18a3660a831859"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/Kconfig.defconfig",
+      "bytes": 739,
+      "sha256": "d27701f3978419cdeba25d28e6891d4fb07abc647f87c0724e91c43f007ed4bb"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/Kconfig.shield",
+      "bytes": 294,
+      "sha256": "4ecaf7a1d1af62f8f66503e38f9ab0c270ebf0e0232763b4ac79f1074f373551"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/boards/nice_nano.overlay",
+      "bytes": 979,
+      "sha256": "64dae36330fa51fe7b459fec9c26ada2a0967e69f48550de256afe116dc4f663"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/boards/nice_nano_v2.overlay",
+      "bytes": 979,
+      "sha256": "b3c55fa93a6e789e2840a9f003b4c019b7abc90545386233205aab7d88491956"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/boards/seeeduino_xiao_ble.overlay",
+      "bytes": 1089,
+      "sha256": "fd8f0dc1f1b140175afde9c49054b4e07d1b8524ca374eefa8d3c75846b9be56"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak-layouts.dtsi",
+      "bytes": 5659,
+      "sha256": "144cec1923cea2224d58878e407e89b30200fa5a46c691a13dd06b8b6e220423"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak.dtsi",
+      "bytes": 4018,
+      "sha256": "1d76824b51f933f986111c9cf9bb5b6043a8ec22cad0d73f0d630ad3d7280203"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak.keymap",
+      "bytes": 8533,
+      "sha256": "6340fa0136f4424ecd7c6fd6dcb8f26a45bc7080c616b4938844299407b8b5ee"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak.zmk.yml",
+      "bytes": 270,
+      "sha256": "19928ae0a601bf455ffba980be3a7876418e09ff22444a23d2668112f891acfa"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak_dongle.conf",
+      "bytes": 1434,
+      "sha256": "6b9ba93c8f4d3fa01f7b4582af53d4a5b44a4ec22a6a18e17d11740393ae5626"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak_dongle.overlay",
+      "bytes": 2581,
+      "sha256": "bd01963445fa8e883591c67546479942098bd1ede40f0cdbac3b4924739e6f92"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak_left.conf",
+      "bytes": 958,
+      "sha256": "4cf1c6c8d6198d4d646a3f1a7e574d6ac8d6011649ef7da297fc5ccb17265b55"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak_left.overlay",
+      "bytes": 788,
+      "sha256": "c28486331b5a1b8e37bf4127237d083dbd90064d2fbf844d33d8ea6c9292e524"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak_right.conf",
+      "bytes": 575,
+      "sha256": "d5dd765a8a8ba3f16b6a8f9ea04146c9b339e2f25a20735c33c69cef1fdf67b2"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/boards/shields/takmak/takmak_right.overlay",
+      "bytes": 827,
+      "sha256": "5d46b5e6df693578fd5d4398edd41a1522db1bdc4fa243af63e81277138f5da7"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/build.yaml",
+      "bytes": 1363,
+      "sha256": "096769f65e0cd76de285e3f4fe240cfda4a27af23c0e6a83e815a6123ee1b65b"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak/config/west.yml",
+      "bytes": 469,
+      "sha256": "f00c5e6c490558e85fd95e56b929d23466afccc7ed8ba1d14bda46b29c5186a2"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_backup/left/zephyr/zmk.uf2",
+      "bytes": 393728,
+      "sha256": "a2d37924eadc54367723d431470cb9751b8d8d34a7c2fd415a32119bb5a30e69"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_backup/left_v2/zephyr/zmk.uf2",
+      "bytes": 393216,
+      "sha256": "03a2dc957fefed10ed3f3206ca0c371f498bd94859f3d0f3492e382dc13b61bd"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_backup/right/zephyr/zmk.uf2",
+      "bytes": 314368,
+      "sha256": "042f27fa6d597ab601f0b64540c8a9856a2575fbe369ed6172528686839e4046"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_backup/right_v2/zephyr/zmk.uf2",
+      "bytes": 313856,
+      "sha256": "e258f011573513b6d0d4651a1b059a431017274c06970e2a6606d248238da2c8"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/CmakeLists.txt",
+      "bytes": 517,
+      "sha256": "d15f1ee6d4e73fb5a603dd8c8e477c43acd7c71a3c904eaa579c6c184c0ab23b"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/Kconfig.defconfig",
+      "bytes": 739,
+      "sha256": "9038599971a1dab8413991b989a1c593e451d97e01b5833f368b64aa0cea5b4e"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/Kconfig.shield",
+      "bytes": 294,
+      "sha256": "4ecaf7a1d1af62f8f66503e38f9ab0c270ebf0e0232763b4ac79f1074f373551"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/boards/nice_nano.overlay",
+      "bytes": 979,
+      "sha256": "64dae36330fa51fe7b459fec9c26ada2a0967e69f48550de256afe116dc4f663"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/boards/nice_nano_v2.overlay",
+      "bytes": 2487,
+      "sha256": "9206a1c9e7ae5774de0de2921298ae63a097d30bb2d0846d153493b398cb8577"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/build.yaml",
+      "bytes": 378,
+      "sha256": "1c66b5997946e6e402cd6ddba2ba2bbb7f377c0752aa5976a6a8676f4afb1234"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/custom_display.c",
+      "bytes": 2484,
+      "sha256": "67d33966912a92c9a2a5574b7057aa5db7633f66d4d130b375e0a33111775465"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/custom_status_screen.c",
+      "bytes": 5409,
+      "sha256": "d6fc5aa1c3f73c2c75c6da3ee51ac60296d5ad1325088441c18ff9d17c08a61f"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/simple_boot_display.c",
+      "bytes": 1848,
+      "sha256": "9b40b2924196a6d3e6b93bc5aeeeb04248b72f088d37be9d13f38582d3a96c3e"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak-layouts.dtsi",
+      "bytes": 5729,
+      "sha256": "f0b37f5a5a2e4cf8d0883731adef9bd0878941bb0e4a8cbe547b5b5441dd5d28"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak.dtsi",
+      "bytes": 4040,
+      "sha256": "c896b85ed27d790ec13d0ca1e636b86bb5f80e15cfdc8b709ea3624ac803112c"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak.keymap",
+      "bytes": 7479,
+      "sha256": "68b07be1f304d1d1f3631368ed86cd492acda16f447e6e20a0d41753adc32d23"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak.zmk.yml",
+      "bytes": 243,
+      "sha256": "8252a8ed258f8698e7a9de8f021b8c3a7907dbd5a092e4bae8989a9f41b30741"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak_left.conf",
+      "bytes": 559,
+      "sha256": "601edd07b4bfa983ccada4c2d20240e36de24b4089fa6904d50529a0d71d95e4"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak_left.overlay",
+      "bytes": 903,
+      "sha256": "a82a3826c0e43ff08c37a2e05e6235b130ac6c37b21c9fed62de627d9799a18e"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new/app/boards/shields/takmak/takmak_right.overlay",
+      "bytes": 978,
+      "sha256": "4f173cc073995ade02c26fb0a025a2fb8069c2476da139682c3ab68e7f1ddaba"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/assets/photos/IMG_8452.jpg",
+      "bytes": 8850571,
+      "sha256": "b919c47ca0d5062d747ddadaacb59861b5ecbaf6289f113e73310df9a9808977",
+      "source_path": "/Users/dima/Downloads/IMG_8452.jpg",
+      "role": "User-provided reference photograph of two assembled Takmak keyboards"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Low Profile Button.step",
+      "bytes": 16736,
+      "sha256": "02136852cfd910fe2047a0f49f7dbc0ce12575b52bdfa7081b295a850d0d09c6",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Low Profile Screen.step",
+      "bytes": 16496,
+      "sha256": "fa9d3fb2753c8e5b06328491fedfe00816049d9bb3026c416b8c8382420598b1",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Regular.step",
+      "bytes": 16689,
+      "sha256": "fb4e2f7e6a1c531aa0759b97764109f2f9e2e807756e5c34424c2ee1b5ab62c8",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Low Top.step",
+      "bytes": 447383,
+      "sha256": "d6964f8a9ccd31cd9f77dc3961f19e40579c52edf1e2b1fc1021e71a1184b1a3",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Regular Top.step",
+      "bytes": 507708,
+      "sha256": "f5fc4f4f4d778a338397b8e59fc38594d1cc9c24d9bd5aa20b5178587fbbb837",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Reset Button.step",
+      "bytes": 39251,
+      "sha256": "2d7f07c495ff055324620b05e1f14002b27960d52cbd348e856a2dcc993b2d63",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Universal Bottom.step",
+      "bytes": 194997,
+      "sha256": "4193c4869aca8d448ae2fe88c1e03ee4a81a74f1af3e22d4c6f7d328c82f3dfe",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Low Top.step",
+      "bytes": 522969,
+      "sha256": "ed9f225e3ab11b027d3082a18cd8bf9baf9d7f7eee140f3873424e3b75d05244",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Regular Top.step",
+      "bytes": 576659,
+      "sha256": "41759eafb6052a1b451a51ce60a8fc125b1ab109c03d56b1dab8a08d12de273e",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Reset Button.step",
+      "bytes": 39074,
+      "sha256": "9d18e19a43639ccc7819c3f44be04e657e2fbec740879e3973c6411464672928",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Universal Bottom.step",
+      "bytes": 195934,
+      "sha256": "1bbbdf703f0822675b0b7068dd638aa6f6665cb03286ff7cebef4074f3940410",
+      "role": "Onshape STEP export supplied by owner for scene assembly"
+    }
+  ],
+  "repositories": [
+    {
+      "path": "/Volumes/4T/workspace/takmak",
+      "head": "575c7478b4f9927773747992a7600dea17c13920",
+      "last_commit": "575c747 2022-02-03 move ESC instead of CAPS",
+      "origin": "https://github.com/seniorsoftwarevlogger/ssv_split.git",
+      "status_scope": [
+        "entire repository"
+      ],
+      "status": "D \"3d models/SSV_Split - Left.stl\"\n D \"3d models/SSV_Split - Right.stl\"\n M qmk_firmware/takmak/config.h\n M qmk_firmware/takmak/keymaps/default/keymap.c\n M qmk_firmware/takmak/takmak.h\n?? \"3d models/Encoder Knob 16mm 3mm/\"\n?? \"3d models/Takmak/\"\n?? Takmak-left/\n?? kicad/"
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak-zmk",
+      "head": "9ecd18021ec311b396d44872946d9e8dfc88a22f",
+      "last_commit": "9ecd180 2022-09-04 Initial User Config.",
+      "origin": "https://github.com/nLight/takmak-zmk.git",
+      "status_scope": [
+        "entire repository"
+      ],
+      "status": "M build.yaml\n D config/ergodash.conf\n D config/ergodash.keymap\n?? .DS_Store\n?? config/takmak.conf\n?? config/takmak.keymap"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk",
+      "head": "024198de092ec74d4b7b4f59304eb8ca013446b8",
+      "last_commit": "024198de 2024-06-23 add takmak",
+      "origin": "https://github.com/zmkfirmware/zmk.git",
+      "status_scope": [
+        "--",
+        "app/boards/shields/takmak"
+      ],
+      "status": "M app/boards/shields/takmak/Kconfig.defconfig\n M app/boards/shields/takmak/boards/nice_nano_v2.overlay\n M app/boards/shields/takmak/takmak.conf\n M app/boards/shields/takmak/takmak.dtsi\n M app/boards/shields/takmak/takmak.keymap\n M app/boards/shields/takmak/takmak.zmk.yml\n M app/boards/shields/takmak/takmak_left.conf\n M app/boards/shields/takmak/takmak_left.overlay\n M app/boards/shields/takmak/takmak_right.conf\n M app/boards/shields/takmak/takmak_right.overlay\n?? app/boards/shields/takmak/boards/nice_nano.overlay"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk_new",
+      "head": "6b44d33db2f4bad7d98e475e6f7968493b05af73",
+      "last_commit": "6b44d33d 2025-06-16 feat(split): Runtime selection of split transport (#2886)",
+      "origin": "https://github.com/zmkfirmware/zmk.git",
+      "status_scope": [
+        "--",
+        "app/boards/shields/takmak"
+      ],
+      "status": "?? app/boards/shields/takmak/"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-keyboard-takmak",
+      "head": "9f8a226efa6a6a1bd35a3c79d059adc13c95487a",
+      "last_commit": "9f8a226 2025-08-15 enable studio",
+      "origin": "https://github.com/seniorsoftwarevlogger/zmk-keyboard-takmak.git",
+      "status_scope": [
+        "entire repository"
+      ],
+      "status": "M boards/shields/takmak/takmak.dtsi\n M boards/shields/takmak/takmak.keymap"
+    },
+    {
+      "path": "/Volumes/4T/workspace/zmk-dongle-screen",
+      "head": "2aecc3291141b85d2256ffb0a14325500a979165",
+      "last_commit": "2aecc32 2025-08-15 Fix battery indicator positioning",
+      "origin": "https://github.com/seniorsoftwarevlogger/zmk-dongle-screen.git",
+      "status_scope": [
+        "entire repository"
+      ],
+      "status": ""
+    },
+    {
+      "path": "/Volumes/4T/workspace/prospector-zmk-module",
+      "head": "b4abae9182544220b3b353d703e7dd5449d332ec",
+      "last_commit": "b4abae9 2025-07-23 Keep spi2",
+      "origin": "https://github.com/seniorsoftwarevlogger/prospector-zmk-module.git",
+      "status_scope": [
+        "entire repository"
+      ],
+      "status": "?? .DS_Store\n?? src/.DS_Store"
+    },
+    {
+      "path": "/Volumes/4T/workspace/vial-qmk",
+      "head": "8a187bbb7f17fea2413173dd7235598f6318cadb",
+      "last_commit": "8a187bbb7f 2025-03-03 Adding Vial Support for Krado Industries Promenade RP24S (#859)",
+      "origin": "https://github.com/vial-kb/vial-qmk.git",
+      "status_scope": [
+        "--",
+        "keyboards/takmak"
+      ],
+      "status": "?? keyboards/takmak/"
+    },
+    {
+      "path": "/Volumes/4T/workspace/BlueMicro_BLE",
+      "head": "2fedd92a6778418bd65974244574fc6de230eadb",
+      "last_commit": "2fedd92 2023-03-14 Merge pull request #323 from jpconstantineau/dependabot/npm_and_yarn/documentation/webpack-5.76.1",
+      "origin": "https://github.com/jpconstantineau/BlueMicro_BLE.git",
+      "status_scope": [
+        "--",
+        "firmware/keyboards/takmak"
+      ],
+      "status": "?? firmware/keyboards/takmak/"
+    }
+  ],
+  "pcbs": [
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left-rounded.kicad_pcb",
+      "footprints": {
+        "Keebio:Diode-Hybrid-Back": 33,
+        "Switches:SW_MX_PG1350": 32,
+        "Arduino:Sparkfun_Pro_Micro": 1,
+        "keebio-git:MX-Kailh-PG1350-2u-NoLED": 1,
+        "Keebio:TRRS-PJ-320A": 1
+      },
+      "texts": [],
+      "model_references": {
+        "${KISYS3DMOD}/Diodes_SMD.3dshapes/D_SOD-123.step": 33,
+        "/Users/dima/Documents/KiCad/6.0/3dmodels/Kailh Choc Low Profile Switch.step": 32,
+        "${KISYS3DMOD}/Module.3dshapes/Arduino_Nano_WithMountingHoles.wrl": 1,
+        "${LOCALREPO}/kicad-lib-arduino/Arduino.3dshapes/sparkfun_pro_micro.x3d": 1,
+        "/Users/danny/Documents/proj/custom-keyboard/kicad-libs/3d_models/mx-switch.wrl": 1,
+        "/Users/danny/Documents/proj/custom-keyboard/kicad-libs/3d_models/SA-R3-1u.wrl": 1,
+        "/Users/danny/syncproj/kicad-libs/footprints/Keebio-Parts.pretty/3dmodels/PJ-320A.step": 1
+      }
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/Takmak-left/Takmak-left.kicad_pcb",
+      "footprints": {
+        "Keebio:Diode-Hybrid-Back": 33,
+        "Switches:SW_MX_PG1350": 32,
+        "Arduino:Sparkfun_Pro_Micro": 1,
+        "keebio-git:MX-Kailh-PG1350-2u-NoLED": 1,
+        "Keebio:TRRS-PJ-320A": 1
+      },
+      "texts": [],
+      "model_references": {
+        "${KISYS3DMOD}/Diodes_SMD.3dshapes/D_SOD-123.step": 33,
+        "/Users/dima/Documents/KiCad/6.0/3dmodels/Kailh Choc Low Profile Switch.step": 32,
+        "${KISYS3DMOD}/Module.3dshapes/Arduino_Nano_WithMountingHoles.wrl": 1,
+        "${LOCALREPO}/kicad-lib-arduino/Arduino.3dshapes/sparkfun_pro_micro.x3d": 1,
+        "/Users/danny/Documents/proj/custom-keyboard/kicad-libs/3d_models/mx-switch.wrl": 1,
+        "/Users/danny/Documents/proj/custom-keyboard/kicad-libs/3d_models/SA-R3-1u.wrl": 1,
+        "/Users/danny/syncproj/kicad-libs/footprints/Keebio-Parts.pretty/3dmodels/PJ-320A.step": 1
+      }
+    },
+    {
+      "path": "/Volumes/4T/workspace/takmak/kicad/takmak.kicad_pcb",
+      "footprints": {
+        "Keebio:Diode-dual-alt-silk": 39,
+        "Keebio:SK68XXMini_1": 41,
+        "Keebio:Kailh-PG1350-2u-Stab": 1,
+        "Kailh:MX-Choc-Double": 38,
+        "Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS": 1,
+        "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm": 5,
+        "Keebio:I2C_Breakout": 2,
+        "Arduino:Sparkfun_Pro_Micro": 1,
+        "Kailh:2-MX-Choc-EC11": 1,
+        "kicad-my:MX_Kailh_EC11": 1,
+        "Keebio:TRRS-PJ-320A-dual-2": 1
+      },
+      "texts": [
+        "seniorsoftwarevlogger.com/takmak",
+        "v3.1",
+        "Takmak",
+        "Takmak",
+        "v3.1"
+      ],
+      "model_references": {
+        "${KICAD6_3DMODEL_DIR}/Diodes_SMD.3dshapes/D_SOD-123.step": 39,
+        "${KIPRJMOD}/3d/LED_SK6812MINI-E.step": 41,
+        "/Users/danny/Documents/proj/custom-keyboard/kicad-libs/3d_models/mx-switch.wrl": 1,
+        "/Users/danny/Documents/proj/custom-keyboard/kicad-libs/3d_models/SA-R3-1u.wrl": 1,
+        "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS.wrl": 1,
+        "${KISYS3DMOD}/Module.3dshapes/Arduino_Nano_WithMountingHoles.wrl": 1,
+        "${LOCALREPO}/kicad-lib-arduino/Arduino.3dshapes/sparkfun_pro_micro.x3d": 1,
+        "/Users/danny/syncproj/kicad-libs/footprints/Keebio-Parts.pretty/3dmodels/PJ-320A.step": 1
+      },
+      "revision": "3.1",
+      "manufacturing_status": "not manufactured, confirmed by owner 2026-10-11"
+    }
+  ],
+  "owner_clarifications": {
+    "date": "2026-10-11",
+    "source": "User message in this chat",
+    "last_manufactured_pcb_revision": "3.0",
+    "last_manufactured_pcb_source_file": null,
+    "pcb_3_1": {
+      "manufactured": false,
+      "known_change": "Larger low-profile switch footprints to accommodate hotswap sockets; not an exhaustive revision diff",
+      "planned_use": "Owner is considering manufacturing it to rebuild the low-profile keyboard"
+    },
+    "standard_build": {
+      "switches": "Kailh MX; exact variant pending",
+      "keycaps": "GMK Clones Dark Keycaps Minimall Black PBT Dye Sub, Cherry profile",
+      "split_mode": "left half central"
+    },
+    "low_profile_build": {
+      "switches": "Kailh Choc v1; exact variant pending",
+      "keycaps": "MBK",
+      "keycaps_reference_url": "https://keebmaker.com/products/mbk-glow-legend-keycaps",
+      "split_mode": "separate dongle"
+    },
+    "thumb_configuration": {
+      "left": "one large key; separate left encoder below display remains part of build",
+      "right": "one key and one encoder"
+    },
+    "shared_component_list": {
+      "oled": "0.91 inch 128x32 I2C/IIC white OLED module; exact dimensions and controller unconfirmed",
+      "encoder": "EC11 with push button; exact shaft and body variant pending",
+      "reset": "2-pin tactile switch, H 2.5 mm; listing mentions both 4x6 and 3x6 mm, selected size unconfirmed"
+    },
+    "pending": [
+      "controller models",
+      "battery models and dimensions",
+      "hotswap socket models",
+      "complete component quantities"
+    ]
+  },
+  "scene": {
+    "path": "/Volumes/4T/workspace/takmak/scene",
+    "readme": "/Volumes/4T/workspace/takmak/scene/README.md",
+    "source": "11 owner-provided STEP exports",
+    "generated_asset_manifest": "/Volumes/4T/workspace/takmak/scene/public/models/manifest.json",
+    "layout": "/Volumes/4T/workspace/takmak/scene/public/models/layout.json",
+    "profiles": [
+      "low",
+      "regular"
+    ],
+    "publication": "local only",
+    "limitations": [
+      "Illustrative procedural keycaps and simplified switch housings",
+      "No PCB, battery or wiring",
+      "No manufacturing fit validation"
+    ]
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "units": "millimetres in metadata; metres in GLB",
+  "parts": {
+    "encoder-knob-16mm-3mm-low-profile-button": {
+      "file": "models/encoder-knob-16mm-3mm-low-profile-button.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Low Profile Button.step",
+      "sourceSha256": "02136852cfd910fe2047a0f49f7dbc0ce12575b52bdfa7081b295a850d0d09c6",
+      "min": [
+        52.16356592187711,
+        -12.5,
+        -9.25
+      ],
+      "max": [
+        70.6364340781229,
+        0.5,
+        9.25
+      ],
+      "size": [
+        18.472868156245795,
+        13,
+        18.5
+      ],
+      "center": [
+        61.400000000000006,
+        -6,
+        0
+      ],
+      "triangles": 2084,
+      "bytes": 76660
+    },
+    "encoder-knob-16mm-3mm-low-profile-screen": {
+      "file": "models/encoder-knob-16mm-3mm-low-profile-screen.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Low Profile Screen.step",
+      "sourceSha256": "fa9d3fb2753c8e5b06328491fedfe00816049d9bb3026c416b8c8382420598b1",
+      "min": [
+        -9.236434078122898,
+        -12.5,
+        -9.25
+      ],
+      "max": [
+        9.236434078122896,
+        0,
+        9.25
+      ],
+      "size": [
+        18.472868156245795,
+        12.5,
+        18.5
+      ],
+      "center": [
+        -8.881784197001252e-16,
+        -6.25,
+        0
+      ],
+      "triangles": 2084,
+      "bytes": 76640
+    },
+    "encoder-knob-16mm-3mm-regular": {
+      "file": "models/encoder-knob-16mm-3mm-regular.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Regular.step",
+      "sourceSha256": "fb4e2f7e6a1c531aa0759b97764109f2f9e2e807756e5c34424c2ee1b5ab62c8",
+      "min": [
+        10.873565921877102,
+        -16.5,
+        -9.25
+      ],
+      "max": [
+        29.346434078122897,
+        0,
+        9.25
+      ],
+      "size": [
+        18.472868156245795,
+        16.5,
+        18.5
+      ],
+      "center": [
+        20.11,
+        -8.25,
+        0
+      ],
+      "triangles": 2084,
+      "bytes": 76632
+    },
+    "takmak-left-low-top": {
+      "file": "models/takmak-left-low-top.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Low Top.step",
+      "sourceSha256": "d6964f8a9ccd31cd9f77dc3961f19e40579c52edf1e2b1fc1021e71a1184b1a3",
+      "min": [
+        -152.872837424278,
+        96.52867636320764,
+        -2
+      ],
+      "max": [
+        -8.62393744619382,
+        211.941966414451,
+        4
+      ],
+      "size": [
+        144.24889997808418,
+        115.41329005124337,
+        6
+      ],
+      "center": [
+        -80.74838743523591,
+        154.23532138882933,
+        1
+      ],
+      "triangles": 12834,
+      "bytes": 421256
+    },
+    "takmak-left-regular-top": {
+      "file": "models/takmak-left-regular-top.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Regular Top.step",
+      "sourceSha256": "f5fc4f4f4d778a338397b8e59fc38594d1cc9c24d9bd5aa20b5178587fbbb837",
+      "min": [
+        -152.872837424278,
+        -53.471323636792356,
+        -4
+      ],
+      "max": [
+        -8.62393744619382,
+        61.9419664144516,
+        6.5
+      ],
+      "size": [
+        144.24889997808418,
+        115.41329005124396,
+        10.5
+      ],
+      "center": [
+        -80.74838743523591,
+        4.235321388829622,
+        1.25
+      ],
+      "triangles": 12867,
+      "bytes": 427224
+    },
+    "takmak-left-reset-button": {
+      "file": "models/takmak-left-reset-button.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Reset Button.step",
+      "sourceSha256": "2d7f07c495ff055324620b05e1f14002b27960d52cbd348e856a2dcc993b2d63",
+      "min": [
+        -108.77250887820364,
+        13.0196174653725,
+        -11.872944209786548
+      ],
+      "max": [
+        -96.77559051269142,
+        25.052133453806277,
+        -7.996509447056261
+      ],
+      "size": [
+        11.996918365512215,
+        12.032515988433778,
+        3.8764347627302866
+      ],
+      "center": [
+        -102.77404969544753,
+        19.035875459589388,
+        -9.934726828421404
+      ],
+      "triangles": 500,
+      "bytes": 19056
+    },
+    "takmak-left-universal-bottom": {
+      "file": "models/takmak-left-universal-bottom.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Universal Bottom.step",
+      "sourceSha256": "4193c4869aca8d448ae2fe88c1e03ee4a81a74f1af3e22d4c6f7d328c82f3dfe",
+      "min": [
+        -152.872837424278,
+        -53.471323636792356,
+        -16.0489684187244
+      ],
+      "max": [
+        -8.62393744619382,
+        61.9419664144516,
+        -4
+      ],
+      "size": [
+        144.24889997808418,
+        115.41329005124396,
+        12.0489684187244
+      ],
+      "center": [
+        -80.74838743523591,
+        4.235321388829622,
+        -10.0244842093622
+      ],
+      "triangles": 8920,
+      "bytes": 309544
+    },
+    "takmak-right-low-top": {
+      "file": "models/takmak-right-low-top.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Low Top.step",
+      "sourceSha256": "ed9f225e3ab11b027d3082a18cd8bf9baf9d7f7eee140f3873424e3b75d05244",
+      "min": [
+        3.10633046551063,
+        96.52867636319843,
+        -2
+      ],
+      "max": [
+        166.405249011281,
+        211.941966414451,
+        4
+      ],
+      "size": [
+        163.29891854577036,
+        115.41329005125257,
+        6
+      ],
+      "center": [
+        84.75578973839582,
+        154.23532138882473,
+        1
+      ],
+      "triangles": 11162,
+      "bytes": 380504
+    },
+    "takmak-right-regular-top": {
+      "file": "models/takmak-right-regular-top.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Regular Top.step",
+      "sourceSha256": "41759eafb6052a1b451a51ce60a8fc125b1ab109c03d56b1dab8a08d12de273e",
+      "min": [
+        3.10633046551063,
+        -53.47132363680156,
+        -4
+      ],
+      "max": [
+        166.405249011281,
+        61.9419664144516,
+        6.5
+      ],
+      "size": [
+        163.29891854577036,
+        115.41329005125316,
+        10.5
+      ],
+      "center": [
+        84.75578973839582,
+        4.235321388825021,
+        1.25
+      ],
+      "triangles": 11455,
+      "bytes": 392376
+    },
+    "takmak-right-reset-button": {
+      "file": "models/takmak-right-reset-button.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Reset Button.step",
+      "sourceSha256": "9d18e19a43639ccc7819c3f44be04e657e2fbec740879e3973c6411464672928",
+      "min": [
+        91.256094291245,
+        13.019617465372098,
+        -11.872944209786514
+      ],
+      "max": [
+        103.25301265675813,
+        25.05213345380465,
+        -7.996509447056269
+      ],
+      "size": [
+        11.996918365513125,
+        12.032515988432552,
+        3.876434762730245
+      ],
+      "center": [
+        97.25455347400157,
+        19.035875459588375,
+        -9.934726828421391
+      ],
+      "triangles": 500,
+      "bytes": 19056
+    },
+    "takmak-right-universal-bottom": {
+      "file": "models/takmak-right-universal-bottom.glb",
+      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Universal Bottom.step",
+      "sourceSha256": "1bbbdf703f0822675b0b7068dd638aa6f6665cb03286ff7cebef4074f3940410",
+      "min": [
+        3.10633046551063,
+        -53.47132363680156,
+        -16.049969982941
+      ],
+      "max": [
+        166.405249011281,
+        61.9419664144516,
+        -4
+      ],
+      "size": [
+        163.29891854577036,
+        115.41329005125316,
+        12.049969982941
+      ],
+      "center": [
+        84.75578973839582,
+        4.235321388825021,
+        -10.0249849914705
+      ],
+      "triangles": 9004,
+      "bytes": 311680
+    }
+  },
+  "notes": [
+    "Original STEP files remain unchanged.",
+    "No PCB model is included.",
+    "Keycap surfaces are illustrative; exact cap CAD has not been supplied."
+  ]
+}

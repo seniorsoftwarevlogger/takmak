@@ -1,0 +1,564 @@
+{
+  "source": "Square switch aperture loops in supplied Regular Top STEP files (z=0). Thumb choices match owner photo.",
+  "sides": {
+    "left": {
+      "keys": [
+        {
+          "x": -82.7231,
+          "y": 50.742,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5389"
+        },
+        {
+          "x": -101.7731,
+          "y": 48.3615,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5390"
+        },
+        {
+          "x": -63.6733,
+          "y": 45.9804,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5391"
+        },
+        {
+          "x": -44.6234,
+          "y": 45.9804,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5392"
+        },
+        {
+          "x": -139.8732,
+          "y": 43.6541,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5393"
+        },
+        {
+          "x": -120.8231,
+          "y": 43.5995,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5394"
+        },
+        {
+          "x": -82.7231,
+          "y": 31.692,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5395"
+        },
+        {
+          "x": -101.7731,
+          "y": 29.3114,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5396"
+        },
+        {
+          "x": -63.6733,
+          "y": 26.9302,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5397"
+        },
+        {
+          "x": -44.6234,
+          "y": 26.9302,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5398"
+        },
+        {
+          "x": -139.8732,
+          "y": 24.5496,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5399"
+        },
+        {
+          "x": -120.8231,
+          "y": 24.5496,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5400"
+        },
+        {
+          "x": -82.7231,
+          "y": 12.642,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5401"
+        },
+        {
+          "x": -101.7731,
+          "y": 10.2614,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5402"
+        },
+        {
+          "x": -63.6733,
+          "y": 7.8802,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5403"
+        },
+        {
+          "x": -44.6234,
+          "y": 7.8802,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5404"
+        },
+        {
+          "x": -139.8731,
+          "y": 5.4996,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5405"
+        },
+        {
+          "x": -120.8231,
+          "y": 5.4996,
+          "angle": -0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5406"
+        },
+        {
+          "x": -82.7231,
+          "y": -6.408,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5407"
+        },
+        {
+          "x": -101.7731,
+          "y": -8.7886,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5408"
+        },
+        {
+          "x": -63.6733,
+          "y": -11.1698,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5409"
+        },
+        {
+          "x": -44.6234,
+          "y": -11.1698,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5410"
+        },
+        {
+          "x": -139.8731,
+          "y": -13.5504,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5411"
+        },
+        {
+          "x": -120.8231,
+          "y": -13.5504,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5412"
+        },
+        {
+          "x": -29.232,
+          "y": -29.582,
+          "angle": -30,
+          "width": 1,
+          "height": 2,
+          "role": "thumb"
+        },
+        {
+          "x": -78.4335,
+          "y": -30.1781,
+          "angle": -5.0,
+          "width": 1.25,
+          "height": 1,
+          "step_loop": "5413"
+        },
+        {
+          "x": -101.7731,
+          "y": -32.5997,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5414"
+        },
+        {
+          "x": -120.8231,
+          "y": -32.6004,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5388"
+        },
+        {
+          "x": -139.8732,
+          "y": -32.6009,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5416"
+        },
+        {
+          "x": -54.5682,
+          "y": -32.8455,
+          "angle": -15.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "5415"
+        }
+      ],
+      "encoder": {
+        "x": -25.573,
+        "y": 3.116
+      },
+      "display": {
+        "x": -25.573,
+        "y": 32.616,
+        "width": 11.5,
+        "height": 35
+      }
+    },
+    "right": {
+      "keys": [
+        {
+          "x": 77.2055,
+          "y": 50.742,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6270"
+        },
+        {
+          "x": 96.2555,
+          "y": 48.3615,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6267"
+        },
+        {
+          "x": 39.1057,
+          "y": 45.9804,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6285"
+        },
+        {
+          "x": 58.1557,
+          "y": 45.9804,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6288"
+        },
+        {
+          "x": 115.3055,
+          "y": 43.5995,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6268"
+        },
+        {
+          "x": 134.3555,
+          "y": 43.5995,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6290"
+        },
+        {
+          "x": 153.4056,
+          "y": 43.5995,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6293"
+        },
+        {
+          "x": 20.0537,
+          "y": 41.2164,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6289"
+        },
+        {
+          "x": 77.2055,
+          "y": 31.692,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6274"
+        },
+        {
+          "x": 96.2555,
+          "y": 29.3114,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6263"
+        },
+        {
+          "x": 39.1057,
+          "y": 26.9302,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6278"
+        },
+        {
+          "x": 58.1557,
+          "y": 26.9302,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6279"
+        },
+        {
+          "x": 115.3055,
+          "y": 24.5496,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6266"
+        },
+        {
+          "x": 134.3555,
+          "y": 24.5496,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6262"
+        },
+        {
+          "x": 153.4056,
+          "y": 24.5496,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6292"
+        },
+        {
+          "x": 20.0557,
+          "y": 22.1685,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6273"
+        },
+        {
+          "x": 77.2055,
+          "y": 12.642,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6277"
+        },
+        {
+          "x": 96.2555,
+          "y": 10.2614,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6281"
+        },
+        {
+          "x": 39.1057,
+          "y": 7.8802,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6271"
+        },
+        {
+          "x": 58.1557,
+          "y": 7.8802,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6265"
+        },
+        {
+          "x": 115.3055,
+          "y": 5.4996,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6287"
+        },
+        {
+          "x": 134.3555,
+          "y": 5.4996,
+          "angle": -0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6259"
+        },
+        {
+          "x": 153.4055,
+          "y": 5.4996,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6260"
+        },
+        {
+          "x": 20.0557,
+          "y": 3.1163,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6283"
+        },
+        {
+          "x": 77.2055,
+          "y": -6.408,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6280"
+        },
+        {
+          "x": 96.2555,
+          "y": -8.7886,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6264"
+        },
+        {
+          "x": 39.1057,
+          "y": -11.1698,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6272"
+        },
+        {
+          "x": 58.1557,
+          "y": -11.1698,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6284"
+        },
+        {
+          "x": 115.3055,
+          "y": -13.5504,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6286"
+        },
+        {
+          "x": 143.829,
+          "y": -13.5746,
+          "angle": -0.0,
+          "width": 2,
+          "height": 1,
+          "step_loop": "6254"
+        },
+        {
+          "x": 73.1061,
+          "y": -30.0681,
+          "angle": 4.998,
+          "width": 1.25,
+          "height": 1,
+          "step_loop": "6258"
+        },
+        {
+          "x": 96.2555,
+          "y": -32.5997,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6282"
+        },
+        {
+          "x": 115.3055,
+          "y": -32.6004,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6269"
+        },
+        {
+          "x": 134.3555,
+          "y": -32.6004,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6261"
+        },
+        {
+          "x": 153.4056,
+          "y": -32.6004,
+          "angle": 0.0,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6291"
+        },
+        {
+          "x": 49.2401,
+          "y": -32.7377,
+          "angle": 15.004,
+          "width": 1,
+          "height": 1,
+          "step_loop": "6276"
+        },
+        {
+          "x": 30.522,
+          "y": -39.537,
+          "angle": 30,
+          "width": 1,
+          "height": 1,
+          "role": "thumb"
+        }
+      ],
+      "encoder": {
+        "x": 18.505,
+        "y": -18.71
+      },
+      "display": null
+    }
+  }
+}

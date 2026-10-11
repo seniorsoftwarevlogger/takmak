@@ -1,0 +1,15 @@
+{
+  "source": "assets/decoration/takmak-silkscreen.dxf",
+  "sha256": "772b75253408c792cd088c656713e534aefb11c17878dd6b157dfee95b88bf06",
+  "entities": {
+    "LINE": 13,
+    "SPLINE": 43
+  },
+  "bounds": [
+    2.48265711059793,
+    -62.05400010065491,
+    164.5600668821651,
+    63.11416656562174
+  ],
+  "conversion": "Planar spline evaluation with 24 samples per nonzero knot span; Y inverted for SVG. Full SVG retains LINE entities; contours SVG omits straight segments for website decoration."
+}

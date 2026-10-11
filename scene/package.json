@@ -1,0 +1,20 @@
+{
+  "name": "takmak-scene",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "assets": "node scripts/prepare-assets.cjs && python3 scripts/extract-layout.py",
+    "check": "node scripts/verify-assets.cjs && node --check src/main.js"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.4",
+    "occt-import-js": "0.0.23"
+  }
+}
