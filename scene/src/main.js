@@ -12,6 +12,12 @@ const deg = THREE.MathUtils.degToRad;
 const STORAGE = 'takmak.scene.pose.v2'; // New baseline: author's selected second pose; old saves remain untouched.
 const EMBED = new URLSearchParams(location.search).get('embed') === '1';
 if(EMBED) document.body.classList.add('embedded-scene');
+const englishEmbed=EMBED&&new URLSearchParams(location.search).get('lang')==='en';
+if(englishEmbed){
+ document.documentElement.lang='en';
+ document.querySelector('#loading strong').textContent='Assembling Takmak';
+ document.querySelector('#loading-text').textContent='Loading STEP geometry';
+}
 const DEFAULT = { profile: 'low', side: 'left', gap: 14, lift: 12, legends: true, left: { yaw: 13, tilt: -2, roll: -13 }, right: { yaw: -10, tilt: 21, roll: 15 } };
 let state = structuredClone(DEFAULT), ready = false, savedPose = null;
 const assemblies = {}, legendObjects = [], geometryCache = new Map();
@@ -299,7 +305,7 @@ async function init(){
  const [manifest,layout,oled]=await Promise.all([fetch('./models/manifest.json').then(r=>{if(!r.ok)throw Error('Нет manifest.json');return r.json()}),fetch('./models/layout.json').then(r=>{if(!r.ok)throw Error('Нет layout.json');return r.json()}),fetch('./textures/oled-status.json').then(r=>{if(!r.ok)throw Error('Нет oled-status.json');return r.json()})]);
  oledBitmap=oled;
  const loader=new GLTFLoader(),geometries={};let count=0;const parts=Object.entries(manifest.parts).filter(([id])=>!id.startsWith('switch-'));
- await Promise.all(parts.map(async([id,part])=>{const gltf=await loader.loadAsync('./'+part.file);gltf.scene.updateMatrixWorld(true);const meshes=[];gltf.scene.traverse(o=>{if(o.isMesh){const g=o.geometry.clone().applyMatrix4(o.matrixWorld);if(g.index){meshes.push(g.toNonIndexed());g.dispose();}else meshes.push(g);}});const merged=mergeGeometries(meshes,false);if(!merged)throw Error('Несовместимая геометрия: '+id);merged.computeBoundingBox();geometries[id]=merged;meshes.forEach(g=>g.dispose());$('#loading-text').textContent=`Детали ${++count} / ${parts.length}`;}));
+ await Promise.all(parts.map(async([id,part])=>{const gltf=await loader.loadAsync('./'+part.file);gltf.scene.updateMatrixWorld(true);const meshes=[];gltf.scene.traverse(o=>{if(o.isMesh){const g=o.geometry.clone().applyMatrix4(o.matrixWorld);if(g.index){meshes.push(g.toNonIndexed());g.dispose();}else meshes.push(g);}});const merged=mergeGeometries(meshes,false);if(!merged)throw Error('Несовместимая геометрия: '+id);merged.computeBoundingBox();geometries[id]=merged;meshes.forEach(g=>g.dispose());$('#loading-text').textContent=`${englishEmbed?'Parts':'Детали'} ${++count} / ${parts.length}`;}));
  assemblies.low=createAssembly('low',manifest,geometries,layout);assemblies.regular=createAssembly('regular',manifest,geometries,layout);
  await loadPoseOptions();
  try{if(!EMBED)renderStyle=localStorage.getItem('takmak.scene.render-style')||'technical';}catch{}
@@ -343,4 +349,4 @@ $('#snapshot').addEventListener('click',()=>{if(!ready)return;renderer.render(sc
 $('#panel-toggle').addEventListener('click',()=>{const open=$('#panel-toggle').getAttribute('aria-expanded')==='true';$('#panel-toggle').setAttribute('aria-expanded',!open);$('#panel-content').hidden=open;$('#panel-content').style.display=open?'none':'';$('.panel-icon').textContent=open?'+':'−';});
 $('#details-button').addEventListener('click',()=>{$('#details').showModal();$('#details-button').setAttribute('aria-expanded','true')});
 $('#close-details').addEventListener('click',()=>$('#details').close());$('#details').addEventListener('close',()=>$('#details-button').setAttribute('aria-expanded','false'));
-init().catch(error=>{console.error(error);$('#loading strong').textContent='Не удалось открыть сцену';$('#loading-text').textContent=error.message+' — попробуй обновить страницу.';$('.loader-ring').style.animation='none';if(EMBED)parent.postMessage({type:'takmak:error'},location.origin);});
+init().catch(error=>{console.error(error);$('#loading strong').textContent=englishEmbed?'Could not load the scene':'Не удалось открыть сцену';$('#loading-text').textContent=error.message+(englishEmbed?' — try refreshing the page.':' — попробуй обновить страницу.');$('.loader-ring').style.animation='none';if(EMBED)parent.postMessage({type:'takmak:error'},location.origin);});

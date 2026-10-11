@@ -23,7 +23,7 @@ class Links(HTMLParser):
         for key, value in attrs:
             if key in ('href', 'src') and value:
                 check(value, self.source)
-for name in ['index.html', 'studio.html']:
+for name in ['index.html', 'en.html', 'studio.html']:
     source = root / name
     text = source.read_text()
     assert '%BASE_URL%' not in text and '60%' not in text

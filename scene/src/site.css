@@ -22,3 +22,15 @@
 .stage-label { z-index:1; pointer-events:none; }
 .motion-control { z-index:1; }
 .product-selector, .specifications { position:relative; z-index:2; }
+/* Language links stay available at every screen width. */
+.header-tools{display:flex;align-items:center;gap:25px}
+.language-switch{display:flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.5px;flex-shrink:0}
+.language-switch span{color:#c2c6bc}
+.language-switch a{color:var(--muted);padding:8px 0}
+.language-switch a[aria-current=page]{color:var(--ink);font-weight:650}
+.language-switch a:hover{color:var(--orange)}
+@media(max-width:720px){
+ .site-header{height:auto;min-height:100px;padding-block:17px;flex-wrap:wrap;gap:14px 20px}
+ .site-header nav{order:3;width:100%;justify-content:space-between}
+ .header-tools{margin-left:auto;gap:0}
+}

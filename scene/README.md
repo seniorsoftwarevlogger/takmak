@@ -150,3 +150,15 @@ Workflow корня `.github/workflows/pages.yml` выполняет прове�
 `scene/dist` после push в `master`. В PR выполняется только сборка и проверка.
 `verify-site.py /takmak/` проверяет ссылки HTML/CSS, динамические ресурсы сцены
 и хеши архивов. Пути исходных STEP в manifest относительны корню репозитория.
+
+## Languages
+
+The public site has Russian (`index.html`) and English (`en.html`) pages.
+`npm run translate` generates English HTML from the shared Russian structure
+and `locales/en.json`; missing translations fail the build. `predev` and
+`prebuild` run it automatically. Both pages work without JavaScript; the shared
+script localises profile changes and remembers an explicit RU / EN selection.
+The Russian switch links to `?lang=ru` to override a saved English preference.
+Anchor sections are preserved. Each language has its own downloadable guide.
+The separate technical pose studio retains its Russian UI and is marked (RU)
+on the English site; the embedded model’s loading messages are translated.
