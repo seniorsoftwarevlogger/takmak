@@ -1,4 +1,5 @@
 import './style.css';
+import { createTechnicalLines } from './technical-lines.js';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -9,18 +10,41 @@ const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
 const deg = THREE.MathUtils.degToRad;
 const STORAGE = 'takmak.scene.pose.v2'; // New baseline: author's selected second pose; old saves remain untouched.
+const EMBED = new URLSearchParams(location.search).get('embed') === '1';
+if(EMBED) document.body.classList.add('embedded-scene');
 const DEFAULT = { profile: 'low', side: 'left', gap: 14, lift: 12, legends: true, left: { yaw: 13, tilt: -2, roll: -13 }, right: { yaw: -10, tilt: 21, roll: 15 } };
 let state = structuredClone(DEFAULT), ready = false, savedPose = null;
 const assemblies = {}, legendObjects = [], geometryCache = new Map();
-let renderer, scene, camera, orbit, renderTimer, lastWidth = 0, lastHeight = 0;
+let renderer, scene, camera, orbit, renderTimer, oledBitmap, lastWidth = 0, lastHeight = 0;
 const viewport = $('#viewport');
+const technicalLines=createTechnicalLines(),surfaceMaterials=new Set();
+let renderStyle='technical',lighting;
+let adaptiveContours=true;
+try{adaptiveContours=localStorage.getItem('takmak.scene.adaptive-contours')!=='false';}catch{}
+technicalLines.setAdaptive(adaptiveContours);$('#adaptive-contours').checked=adaptiveContours;
 const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
 let floating=!reducedMotion.matches,floatTime=0,lastFrameTime=0;
 $('#floating').checked=floating;
 
 function toast(text) { $('#toast').textContent=text; $('#toast').classList.add('visible'); clearTimeout(toast.timer); toast.timer=setTimeout(()=>$('#toast').classList.remove('visible'),4000); }
 function download(blob,name) { const url=URL.createObjectURL(blob),a=document.createElement('a'); a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000); }
-function material(color,roughness=.62,metalness=0){return new THREE.MeshStandardMaterial({color,roughness,metalness});}
+function material(color,roughness=.62,metalness=0){
+ const m=new THREE.MeshStandardMaterial({color,roughness,metalness});
+ m.userData.original={color:m.color.clone(),roughness,metalness};surfaceMaterials.add(m);return m;
+}
+function setRenderStyle(style){
+ renderStyle=style==='technical'?'technical':'studio';const technical=renderStyle==='technical';
+ technicalLines.setVisible(technical);document.body.dataset.renderStyle=renderStyle;$('#adaptive-contours').disabled=!technical;
+ $$('.render-style button').forEach(b=>{const active=b.dataset.renderStyle===renderStyle;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});
+ for(const m of surfaceMaterials){
+  const original=m.userData.original;m.color.copy(original.color);m.roughness=technical?.9:original.roughness;m.metalness=technical?0:original.metalness;
+  // Lift only the already-white plastics; orange knobs and graphite stay their own colors.
+  if(technical&&Math.min(m.color.r,m.color.g,m.color.b)>.65)m.color.lerp(new THREE.Color('#ffffff'),.65);
+ }
+ if(lighting){lighting.ambient.intensity=technical?1.5:.9;lighting.key.intensity=technical?1.65:2.3;lighting.fill.intensity=technical?.4:.65;lighting.fill.color.set(technical?'#ffffff':'#e8ecf0');scene.environmentIntensity=technical?.65:.48;renderer.toneMappingExposure=technical?1.1:.95;}
+ try{if(!EMBED)localStorage.setItem('takmak.scene.render-style',renderStyle);}catch{}
+ invalidate();
+}
 
 // Rounded rectangular rings make a tapered shell and a shallow concave dish.
 // These are visual stand-ins for MBK and Cherry profiles, not manufacturing CAD.
@@ -41,7 +65,11 @@ function capGeometry(wUnits,hUnits,low,row){
  const p=rings.flat(2),idx=[],N=rings[0].length;
  for(let k=0;k<rings.length-1;k++)for(let i=0;i<N;i++){let n=(i+1)%N,a=k*N+i,b=k*N+n,c=(k+1)*N+i,d=(k+1)*N+n;idx.push(a,b,c,b,d,c);}
  p.push(0,0,H-.75);const center=p.length/3-1;for(let i=0;i<N;i++)idx.push((rings.length-1)*N+i,(rings.length-1)*N+(i+1)%N,center);
- const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setIndex(idx);g.computeVertexNormals();geometryCache.set(id,g);return g;
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setIndex(idx);g.computeVertexNormals();
+ // Keep the upper perimeter as the one continuous outline in the distant view.
+ // The adjacent lower bevel ring is secondary detail, not another primary border.
+ g.userData.contourKind='keycap';g.userData.primaryContour=rings[3];
+ geometryCache.set(id,g);return g;
 }
 const legendTextures=new Map();
 function legendTexture(text,light){
@@ -65,7 +93,7 @@ function keyInfo(key,side,low){
  ]:[['↶','^\n6','&\n7','*\n8','(\n9',')\n0','_\n-','+\n='],['TAB','O','I','U','Y','R','[',']'],['⌫','H','J','K','L',';','\'','CODE'],['','N','M',',','.','/','SHIFT','SHIFT']];
  return {label:key.width===2?'SHIFT':(side==='left'?left:right)[r][c],row:r};
 }
-function mesh(geometry,mat,parent){const m=new THREE.Mesh(geometry,mat);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
+function mesh(geometry,mat,parent){const m=new THREE.Mesh(geometry,mat);m.castShadow=true;m.receiveShadow=true;parent.add(m);technicalLines.add(m);return m;}
 function cadMesh(id,mat,half,manifest,geometries,offsetY=0){
  const g=geometries[id].clone(),center=half.userData.center;
  g.scale(1000,1000,1000);g.translate(-center[0],-center[1]-offsetY,0);g.rotateX(-Math.PI/2);
@@ -73,10 +101,18 @@ function cadMesh(id,mat,half,manifest,geometries,offsetY=0){
 }
 function screen(half,low,layout){
  const p=layout.display,center=half.userData.center;
- const m=mesh(new THREE.BoxGeometry(11.2,1,34.5),material('#101d1d',.19),half);m.position.set(p.x-center[0],low?1.4:5.0,-(p.y-center[1]));
- if(low)return; // Low-profile display state is unconfirmed; preserve dark window as in photo.
- const c=document.createElement('canvas');c.width=128;c.height=512;const ctx=c.getContext('2d');ctx.fillStyle='#071d22';ctx.fillRect(0,0,128,512);ctx.fillStyle='#76dded';ctx.font='bold 32px monospace';ctx.textAlign='center';ctx.fillText('96%',64,55);ctx.fillRect(28,80,72,4);ctx.font='20px monospace';ctx.fillText('BT 1',64,125);ctx.save();ctx.translate(64,355);ctx.rotate(-Math.PI/2);ctx.font='bold 24px monospace';ctx.fillText('BASE',0,0);ctx.restore();
- const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;const g=new THREE.PlaneGeometry(8.2,29);g.rotateX(-Math.PI/2);const display=new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:tex,toneMapped:false}));display.position.copy(m.position);display.position.y+=.53;half.add(display);
+ const m=mesh(new THREE.BoxGeometry(11.2,1,34.5),material('#101d1d',.19),half);m.position.set(p.x-center[0],low?2.5:5.0,-(p.y-center[1]));
+ // Native 128x32 ZMK readout rotated counterclockwise, as on the real keyboard.
+ // Every lit cell comes from a monochrome LVGL glyph, with no browser text rasterization.
+ const c=document.createElement('canvas');c.width=oledBitmap.height;c.height=oledBitmap.width;
+ const ctx=c.getContext('2d');ctx.fillStyle='#08151c';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#79e8ff';
+ oledBitmap.rows.forEach((row,y)=>{for(let x=0;x<row.length;x++)if(row[x]==='1')ctx.fillRect(y,127-x,1,1);});
+ const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;
+ tex.magFilter=THREE.NearestFilter;tex.minFilter=THREE.LinearMipmapLinearFilter;
+ // STEP apertures: regular 8.5x24 mm, low 8.5x25 mm; their centres
+ // offset (+0.5,+1) / (+0.5,+1.5) from the module recess, respectively.
+ const g=new THREE.PlaneGeometry(5.6,22.4);g.rotateX(-Math.PI/2);
+ const display=new THREE.Mesh(g,new THREE.MeshBasicMaterial({map:tex,toneMapped:false}));display.position.copy(m.position);display.position.add(new THREE.Vector3(.5,.56,low?-1.5:-1));half.add(display);
 }
 function knob(half,low,side,layout,manifest,geometries){
  const id='encoder-knob-16mm-3mm-'+(low?(side==='left'?'low-profile-screen':'low-profile-button'):'regular');
@@ -140,9 +176,21 @@ function fitCamera(){
   const v=new THREE.Vector3(x,y,z).sub(target).applyQuaternion(inverse);
   distance=Math.max(distance,Math.abs(v.x)/(tanH*.9)+v.z,Math.abs(v.y)/(tanV*.9)+v.z);
  }
- orbit.target.copy(target);camera.position.copy(target).addScaledVector(direction,distance);orbit.update();
+ // The homepage starts closer; the studio keeps its full-fit framing.
+ orbit.target.copy(target);camera.position.copy(target).addScaledVector(direction,EMBED?distance/1.18:distance);orbit.update();
 }
-function resize(){const w=viewport.clientWidth,h=viewport.clientHeight;if(w===lastWidth&&h===lastHeight)return;const hadSize=lastWidth>0;lastWidth=w;lastHeight=h;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();if(hadSize&&ready)fitCamera();invalidate();}
+function resize(){
+ const w=viewport.clientWidth,h=viewport.clientHeight;
+ if(w===lastWidth&&h===lastHeight)return;
+ const hadSize=lastWidth>0;lastWidth=w;lastHeight=h;renderer.setSize(w,h,false);
+ const stage=EMBED&&window.frameElement?.parentElement;
+ if(stage){
+  // Render beyond the stage without changing the scale of its central image.
+  const {width,height}=stage.getBoundingClientRect();
+  camera.setViewOffset(width,height,(width-w)/2,(height-h)/2,w,h);
+ }else{camera.aspect=w/h;camera.updateProjectionMatrix();}
+ if(hadSize&&ready)fitCamera();invalidate();
+}
 function setCamera(view='perspective'){
  const positions={perspective:[130,300,365],top:[0,490,.01],front:[50,95,490]};
  if(view==='perspective'&&poseOptions.length){camera.position.fromArray(poseOptions[1].pose.camera.position);orbit.target.fromArray(poseOptions[1].pose.camera.target);}else{camera.position.fromArray(positions[view]);orbit.target.set(0,10,0);}
@@ -238,29 +286,45 @@ async function init(){
  scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(35,1,1,2000);
  orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;orbit.dampingFactor=.09;orbit.minDistance=170;orbit.maxDistance=2500;orbit.maxPolarAngle=Math.PI*.85;orbit.addEventListener('change',invalidate);orbit.addEventListener('start',()=>{$$('.canvas-toolbar [data-view]').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});});
  const pmrem=new THREE.PMREMGenerator(renderer),room=new RoomEnvironment();scene.environment=pmrem.fromScene(room,.03).texture;room.dispose();pmrem.dispose();scene.environmentIntensity=.48;
- scene.add(new THREE.HemisphereLight(0xffffff,0xc9c9c9,.9));
+ const ambient=new THREE.HemisphereLight(0xffffff,0xc9c9c9,.9);scene.add(ambient);
  const key=new THREE.DirectionalLight(0xffffff,2.3);key.position.set(-130,280,150);key.castShadow=true;key.shadow.mapSize.set(2048,2048);Object.assign(key.shadow.camera,{left:-370,right:370,top:350,bottom:-350,near:1,far:750});key.shadow.normalBias=.15;key.shadow.bias=-.0002;key.shadow.radius=4;scene.add(key);
- const fill=new THREE.DirectionalLight(0xe8ecf0,.65);fill.position.set(160,90,-150);scene.add(fill);
+ const fill=new THREE.DirectionalLight(0xe8ecf0,.65);fill.position.set(160,90,-150);scene.add(fill);lighting={ambient,key,fill};
  const floor=new THREE.Mesh(new THREE.PlaneGeometry(1800,1800),new THREE.ShadowMaterial({color:'#494949',opacity:.035}));floor.rotation.x=-Math.PI/2;floor.position.y=-30;floor.receiveShadow=true;scene.add(floor);
  const shadowCanvas=document.createElement('canvas');shadowCanvas.width=128;shadowCanvas.height=128;
  const sc=shadowCanvas.getContext('2d'),gradient=sc.createRadialGradient(64,64,8,64,64,64);gradient.addColorStop(0,'rgba(45,45,45,0.17)');gradient.addColorStop(.55,'rgba(45,45,45,0.08)');gradient.addColorStop(1,'rgba(45,45,45,0)');sc.fillStyle=gradient;sc.fillRect(0,0,128,128);
  const shadowTexture=new THREE.CanvasTexture(shadowCanvas);
  for(const x of [-95,105]){const blob=new THREE.Mesh(new THREE.PlaneGeometry(230,170),new THREE.MeshBasicMaterial({map:shadowTexture,transparent:true,depthWrite:false}));blob.rotation.x=-Math.PI/2;blob.position.set(x,-29.9,25);scene.add(blob);}
 
- const [manifest,layout]=await Promise.all([fetch('./models/manifest.json').then(r=>{if(!r.ok)throw Error('Нет manifest.json');return r.json()}),fetch('./models/layout.json').then(r=>{if(!r.ok)throw Error('Нет layout.json');return r.json()})]);
+ const [manifest,layout,oled]=await Promise.all([fetch('./models/manifest.json').then(r=>{if(!r.ok)throw Error('Нет manifest.json');return r.json()}),fetch('./models/layout.json').then(r=>{if(!r.ok)throw Error('Нет layout.json');return r.json()}),fetch('./textures/oled-status.json').then(r=>{if(!r.ok)throw Error('Нет oled-status.json');return r.json()})]);
+ oledBitmap=oled;
  const loader=new GLTFLoader(),geometries={};let count=0;const parts=Object.entries(manifest.parts).filter(([id])=>!id.startsWith('switch-'));
  await Promise.all(parts.map(async([id,part])=>{const gltf=await loader.loadAsync('./'+part.file);gltf.scene.updateMatrixWorld(true);const meshes=[];gltf.scene.traverse(o=>{if(o.isMesh){const g=o.geometry.clone().applyMatrix4(o.matrixWorld);if(g.index){meshes.push(g.toNonIndexed());g.dispose();}else meshes.push(g);}});const merged=mergeGeometries(meshes,false);if(!merged)throw Error('Несовместимая геометрия: '+id);merged.computeBoundingBox();geometries[id]=merged;meshes.forEach(g=>g.dispose());$('#loading-text').textContent=`Детали ${++count} / ${parts.length}`;}));
  assemblies.low=createAssembly('low',manifest,geometries,layout);assemblies.regular=createAssembly('regular',manifest,geometries,layout);
  await loadPoseOptions();
+ try{if(!EMBED)renderStyle=localStorage.getItem('takmak.scene.render-style')||'technical';}catch{}
+ setRenderStyle(renderStyle);
  ready=true;resize();restorePose(poseOptions[1].pose);fitCamera();
- try{const saved=JSON.parse(localStorage.getItem(STORAGE));if(validPose(saved)){savedPose=saved;$('#restore').disabled=false;restorePose(saved);}}catch{}
+ try{const saved=!EMBED&&JSON.parse(localStorage.getItem(STORAGE));if(validPose(saved)){savedPose=saved;$('#restore').disabled=false;restorePose(saved);}}catch{}
  $('#browse-poses').disabled=false;
  $('#loading').classList.add('loaded');$('#loading').setAttribute('aria-hidden','true');$('#save').disabled=false;new ResizeObserver(resize).observe(viewport);invalidate();
+ if(EMBED){
+  orbit.enablePan=false;orbit.rotateSpeed=.7;orbit.zoomSpeed=.85;
+  adaptiveContours=true;technicalLines.setAdaptive(true);
+  window.addEventListener('message',event=>{
+   if(event.origin!==location.origin||event.source!==parent||event.data?.type!=='takmak:present')return;
+   if(['low','regular'].includes(event.data.profile)){state.profile=event.data.profile;syncUI();}
+   if(typeof event.data.animate==='boolean')floating=event.data.animate&&!reducedMotion.matches;
+   updateAssembly();invalidate();
+  });
+  parent.postMessage({type:'takmak:ready'},location.origin);
+ }
  if(new URLSearchParams(location.search).get('gallery')==='1')openPoseGallery();
  // Read-only diagnostics for repeatable local QA and future alignment work.
- window.takmakScene={getState:()=>capturePose(),getStats:()=>({parts:parts.length,keysPerHalf:{left:layout.sides.left.keys.length,right:layout.sides.right.keys.length},drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,profile:state.profile,viewport:[lastWidth,lastHeight]}),setPose:(p)=>restorePose(p)};
+ window.takmakScene={getState:()=>capturePose(),getStats:()=>({parts:parts.length,keysPerHalf:{left:layout.sides.left.keys.length,right:layout.sides.right.keys.length},drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,profile:state.profile,renderStyle,adaptiveContours,viewport:[lastWidth,lastHeight]}),setPose:(p)=>restorePose(p)};
 }
 
+$('#adaptive-contours').addEventListener('change',e=>{adaptiveContours=e.target.checked;technicalLines.setAdaptive(adaptiveContours);try{localStorage.setItem('takmak.scene.adaptive-contours',String(adaptiveContours));}catch{}invalidate();});
+$$('.render-style button').forEach(b=>b.addEventListener('click',()=>{if(ready)setRenderStyle(b.dataset.renderStyle);}));
 $$('.variant').forEach(b=>b.addEventListener('click',()=>{if(!ready)return;const compareChanged=(state.profile==='compare')!==(b.dataset.profile==='compare');state.profile=b.dataset.profile;syncUI();updateAssembly();if(compareChanged)setCamera();}));
 $$('.segmented button').forEach(b=>b.addEventListener('click',()=>{state.side=b.dataset.side;syncUI();}));
 for(const key of ['yaw','tilt','roll','gap','lift'])$('#'+key).addEventListener('input',e=>{if(['gap','lift'].includes(key))state[key]=Number(e.target.value);else state[state.side][key]=Number(e.target.value);syncUI();if(ready)updateAssembly();});
@@ -274,8 +338,8 @@ $$('[data-view]').forEach(b=>b.addEventListener('click',()=>{if(ready)setCamera(
 $('#reset').addEventListener('click',()=>{if(!ready)return;const profile=state.profile;const base=structuredClone(poseOptions[1].pose);base.state.profile=profile;restorePose(base);setCamera();toast('Возвращён твой второй ракурс.');});
 $('#save').addEventListener('click',()=>{if(!ready)return;savedPose=capturePose();let local=true;try{localStorage.setItem(STORAGE,JSON.stringify(savedPose))}catch{local=false}$('#restore').disabled=false;download(new Blob([JSON.stringify(savedPose,null,2)+'\n'],{type:'application/json'}),`takmak-${state.profile}-pose.json`);toast(local?'Ракурс сохранён в браузере и скачан в JSON.':'JSON скачан. Хранилище браузера недоступно.');});
 $('#restore').addEventListener('click',()=>{if(savedPose&&restorePose(savedPose))toast('Твой ракурс восстановлен.');});
-$('#snapshot').addEventListener('click',()=>{if(!ready)return;renderer.render(scene,camera);renderer.domElement.toBlob(b=>{if(b){download(b,`takmak-${state.profile}.png`);toast('Изображение сцены сохранено в PNG.')}},'image/png');});
+$('#snapshot').addEventListener('click',()=>{if(!ready)return;renderer.render(scene,camera);renderer.domElement.toBlob(b=>{if(b){download(b,`takmak-${state.profile}-${renderStyle}.png`);toast('Изображение сцены сохранено в PNG.')}},'image/png');});
 $('#panel-toggle').addEventListener('click',()=>{const open=$('#panel-toggle').getAttribute('aria-expanded')==='true';$('#panel-toggle').setAttribute('aria-expanded',!open);$('#panel-content').hidden=open;$('#panel-content').style.display=open?'none':'';$('.panel-icon').textContent=open?'+':'−';});
 $('#details-button').addEventListener('click',()=>{$('#details').showModal();$('#details-button').setAttribute('aria-expanded','true')});
 $('#close-details').addEventListener('click',()=>$('#details').close());$('#details').addEventListener('close',()=>$('#details-button').setAttribute('aria-expanded','false'));
-init().catch(error=>{console.error(error);$('#loading strong').textContent='Не удалось открыть сцену';$('#loading-text').textContent=error.message+' — попробуй обновить страницу.';$('.loader-ring').style.animation='none';});
+init().catch(error=>{console.error(error);$('#loading strong').textContent='Не удалось открыть сцену';$('#loading-text').textContent=error.message+' — попробуй обновить страницу.';$('.loader-ring').style.animation='none';if(EMBED)parent.postMessage({type:'takmak:error'},location.origin);});

@@ -1,52 +1,74 @@
 <!doctype html>
 <html lang="ru">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#ffffff"><title>Takmak — студия формы</title></head>
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Takmak — 60% сплит-клавиатура с полной русской раскладкой. Низкий и стандартный профиль, универсальная плата, модели для печати и руководство по сборке.">
+  <title>Takmak — No Compromise 60% Split Keyboard</title>
+</head>
 <body>
-  <div id="app">
-    <header class="header">
-      <a class="wordmark" href="./" aria-label="Takmak, главная сцена"><span class="mark"><i></i><i></i><i></i><i></i></span>takmak</a>
-      <div class="edition"><span class="status-dot"></span>СТУДИЯ ФОРМЫ <span class="edition-number">/ 01</span></div>
-      <div class="header-actions"><button id="browse-poses" class="button button-light" disabled>Ракурсы <span>06</span></button><button id="save" class="button button-dark" disabled><span>Зафиксировать ракурс</span><span aria-hidden="true">↗</span></button></div>
-    </header>
-    <main id="workspace">
-      <section class="intro" aria-label="Описание сцены"><div class="eyebrow">SPLIT BY DESIGN</div><h1>Две половинки.<br><em>Твой ракурс.</em></h1><p>Названа в честь скалы рядом с Красноярском.<br>Её топография — на плате и здесь.</p></section>
-      <div class="view-tabs" role="group" aria-label="Исполнение клавиатуры">
-        <button class="variant active" data-profile="low" aria-pressed="true"><span class="swatch light"></span>Низкий профиль</button>
-        <button class="variant" data-profile="regular" aria-pressed="false"><span class="swatch dark"></span>Стандартный</button>
-        <button class="variant compare-button" data-profile="compare" aria-pressed="false" title="Оба исполнения в одной сцене">Оба</button>
+  <a class="skip-link" href="#keyboard">К содержимому</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="Takmak — наверх"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>takmak</a>
+    <nav aria-label="Основная навигация"><a href="#keyboard">Клавиатура</a><a href="#assembly">Сборка</a><a href="#files">Файлы <span aria-hidden="true">↓</span></a></nav>
+    <a class="header-source" href="https://github.com/seniorsoftwarevlogger/ssv_split" target="_blank" rel="noreferrer">Исходники <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="hero wrap" id="keyboard" aria-labelledby="hero-title">
+      <div class="hero-heading"><div><p class="eyebrow">TAKMAK</p><h1 id="hero-title" lang="en">No Compromise<br><span>60% Split Keyboard</span></h1><p class="hero-description">Русская раскладка помещается целиком, включая «Ъ».<br> Буквы остаются на привычных местах — с минимумом изменений при переходе на сплит.</p></div></div>
+      <div class="product-stage">
+        <div class="hero-topography" aria-hidden="true"></div>
+        <span class="stage-label">01 — ФОРМА</span>
+        <iframe id="product-scene" src="/studio.html?embed=1" title="Takmak — объёмная модель клавиатуры" tabindex="-1" aria-hidden="true"></iframe>
+        <div class="scene-fallback" id="scene-fallback" hidden><p>Не удалось показать 3D-модель.</p><a href="/studio.html">Открыть студию ракурсов ↗</a></div>
+        <button class="motion-control" id="motion" aria-pressed="true" aria-label="Остановить парение"><span aria-hidden="true">Ⅱ</span> Парение</button>
       </div>
-      <div id="viewport" aria-label="Интерактивная 3D-сцена Takmak"><canvas id="canvas" aria-label="Вращение: перетащите мышью. Масштаб: колёсико. Перемещение: правая кнопка мыши." tabindex="0"></canvas></div>
-      <div id="loading" role="status"><div class="loader-ring"></div><strong>Собираем Takmak</strong><span id="loading-text">Загружаем геометрию из STEP</span></div>
-      <aside id="controls" aria-label="Настройки композиции">
-        <button id="panel-toggle" aria-expanded="true" aria-controls="panel-content"><span>Композиция</span><span class="panel-icon">−</span></button>
-        <div id="panel-content">
-          <div class="control-heading"><span>ПОВОРОТ ПОЛОВИНКИ</span><span class="tiny-dot"></span></div>
-          <div class="segmented" role="group" aria-label="Выбор половинки"><button data-side="left" class="active" aria-pressed="true">Левая</button><button data-side="right" aria-pressed="false">Правая</button></div>
-          <div class="range-control"><label for="yaw">Разворот <output id="yaw-value">−12°</output></label><input type="range" id="yaw" min="-70" max="70" value="-12" step="1"></div>
-          <div class="range-control"><label for="tilt">Наклон <output id="tilt-value">8°</output></label><input type="range" id="tilt" min="-35" max="45" value="8" step="1"></div>
-          <div class="range-control"><label for="roll">Крен <output id="roll-value">−6°</output></label><input type="range" id="roll" min="-35" max="35" value="-6" step="1"></div>
-          <div class="divider"></div>
-          <div class="range-control"><label for="gap">Расстояние <output id="gap-value">42 мм</output></label><input type="range" id="gap" min="5" max="120" value="42" step="1"></div>
-          <div class="range-control"><label for="lift">Высота левой <output id="lift-value">12 мм</output></label><input type="range" id="lift" min="-35" max="55" value="12" step="1"></div>
-          <label class="check-control"><span>Легенды клавиш</span><input type="checkbox" id="legends" checked><span class="toggle" aria-hidden="true"></span></label>
-          <label class="check-control floating-control"><span>Лёгкое парение</span><input type="checkbox" id="floating" checked><span class="toggle" aria-hidden="true"></span></label>
-          <div class="panel-actions"><button id="reset">Сбросить</button><button id="restore" disabled>Мой ракурс ↗</button></div>
-        </div>
-      </aside>
-      <section class="model-caption" aria-live="polite"><div class="caption-index">01 <span>/ TAKMAK</span></div><h2 id="profile-name">Низкий профиль</h2><p id="profile-spec">Choc v1 · MBK · отдельный донгл</p><div class="color-dots"><span class="dot-white"></span><span class="dot-orange"></span><small id="finish-name">Белый / оранжевый</small></div></section>
-      <div class="canvas-toolbar" role="group" aria-label="Камера"><button data-view="perspective" class="active" aria-pressed="true">¾</button><button data-view="top" aria-pressed="false">Сверху</button><button data-view="front" aria-pressed="false">Спереди</button><span class="toolbar-separator"></span><button id="snapshot" title="Скачать изображение сцены">PNG ↗</button></div>
-      <div class="scene-coordinate">X <span></span> Y <span></span> Z</div>
-    </main>
-    <footer><span><i class="mouse-icon"></i>Тяни — вращай <b>·</b> Колёсико — масштаб</span><span>Корпуса и крутилки из STEP <b>·</b> Кейкапы и свитчи приближённые</span><button id="details-button" aria-expanded="false">О модели ↗</button></footer>
-    <dialog id="pose-gallery" aria-labelledby="gallery-title">
-      <div class="gallery-heading"><div><div class="eyebrow">TAKMAK / РАКУРСЫ</div><h2 id="gallery-title">Найти свой угол.</h2><p>Два твоих ракурса и четыре варианта вокруг второго.<br>Нажми на карточку, чтобы продолжить вращать её в сцене.</p></div><button id="close-gallery" class="close" aria-label="Закрыть ракурсы">×</button></div>
-      <div class="gallery-options"><span>Одинаковые свет и масштаб · низкий профиль</span><button id="download-grid">Скачать сетку PNG ↗</button></div>
-      <div id="pose-grid" class="pose-grid"></div>
-      <div class="gallery-note"><strong>Такмак · Красноярск</strong><p>Скала рядом с родным городом автора. Её топография украшает плату — здесь тот же рисунок из предоставленного DXF.</p></div>
-    </dialog>
-    <div id="toast" role="status" aria-live="polite"></div>
-    <dialog id="details"><button id="close-details" class="close" aria-label="Закрыть">×</button><div class="eyebrow">ОБ ЭТОЙ ИТЕРАЦИИ</div><h2>Геометрия настоящая.<br>Сборка — первая.</h2><p>Корпуса, нижние части, reset-кнопки и крутилки конвертированы из твоих STEP. Центры клавиш получены из отверстий в корпусах.</p><p>Поверхности кейкапов Cherry / MBK, видимые части свитчей и экран пока выполнены как визуальные приближения. Подписи клавиш ориентируются на фото. Плата и внутренние компоненты ещё не добавлены.</p><p>Последняя изготовленная плата — 3.0. Проект 3.1 с Choc hotswap пока не изготовлен. Эта сцена не подтверждает механическую совместимость ревизий.</p><p>«Зафиксировать ракурс» сохраняет камеру и положения половинок в браузере и скачивает JSON. Этот файл можно передать для следующей итерации.</p><div class="details-bottom">Локальная сцена · исходные CAD-файлы не изменены</div></dialog>
-  </div>
-  <script type="module" src="/src/main.js"></script>
+      <div class="product-selector">
+        <div class="profile-tabs" role="group" aria-label="Профиль клавиатуры"><button data-profile="low" aria-pressed="true" class="selected"><span class="profile-dot white"></span>Низкий профиль</button><button data-profile="regular" aria-pressed="false"><span class="profile-dot black"></span>Стандартный</button></div>
+        <p id="profile-description" aria-live="polite">Низкий корпус. Цвет печати — на выбор.</p>
+        <a class="text-link" id="hero-download" href="/downloads/takmak-low-case.zip" download>Скачать корпус <span aria-hidden="true">↓</span></a>
+      </div>
+      <dl class="specifications" aria-live="polite"><div><dt>Свитчи</dt><dd id="spec-switches">Choc v1 / v2</dd></div><div><dt>Кейкапы</dt><dd id="spec-keycaps">Под выбранные свитчи</dd></div><div><dt>Подключение</dt><dd id="spec-connection">Донгл или левая половинка</dd></div><div><dt>Энкодеры</dt><dd>EC11 · правый опционально</dd></div></dl>
+    </section>
+
+    <section class="construction wrap section-space" aria-labelledby="construction-title">
+      <div class="section-label"><span>02 / УСТРОЙСТВО</span><span>КОРПУС И ПЛАТА</span></div>
+      <div class="section-heading"><h2 id="construction-title">Два профиля корпуса</h2><p>Низкий профиль под Choc v1 или v2 и стандартный под MX. Кейкапы подбираются под свитчи, цвет корпуса — под выбранный пластик. MBK и Cherry на фото — примеры сборок автора.</p></div>
+      <div class="construction-grid">
+        <article><span class="detail-number">01</span><h3>Русская раскладка целиком</h3><p>Дополнительная колонка справа оставляет место для «Ъ» и остальных букв русской раскладки. Их не нужно переносить на другой слой. Привычное расположение сохраняется с небольшими исключениями.</p></article>
+        <article><span class="detail-number">02</span><h3>Варианты управления</h3><p>В показанной сборке слева — большая клавиша и крутилка под экраном. Правая крутилка опциональна: плата поддерживает варианты кнопок и энкодеров. Обе версии могут работать через донгл или с левой центральной половинкой.</p></article>
+        <article><span class="detail-number">03</span><h3>Одна плата для двух сторон</h3><p>Для левой половинки отделяется крайняя колонка. Если заказать пять одинаковых плат, получится две клавиатуры и одна запасная плата. Например, можно собрать себе и другу.</p></article>
+      </div>
+      <figure class="build-photo"><img src="/photos/takmak-built.jpg" width="1800" height="1350" loading="lazy" alt="Две настоящие сборки Takmak: чёрная стандартная сверху и белая низкопрофильная снизу"><figcaption><span>Две реальные сборки Takmak.</span><span>Стандартная / низкопрофильная</span></figcaption></figure>
+    </section>
+
+    <section class="origin section-space" aria-labelledby="origin-title"><div class="wrap origin-grid"><div class="origin-copy"><p class="eyebrow">03 / ИМЯ И МЕСТО</p><h2 id="origin-title">Из Красноярска.<br>С сибирским характером.</h2><p>Такмак — скала рядом с родным городом автора. Её имя стало названием клавиатуры, а топография — рисунком на плате.</p><p>На сайте используется тот же рисунок, что и на шелкографии платы.</p><a class="text-link" href="/decoration/takmak-contours.svg" download>Скачать рисунок SVG <span aria-hidden="true">↓</span></a></div><figure class="contour-figure"><img src="/decoration/takmak-contours.svg" alt="Топографические линии Такмака из декоративного слоя печатной платы" loading="lazy"><figcaption><span class="little-cross" aria-hidden="true">+</span> ТАКМАК / РИСУНОК С ПЛАТЫ</figcaption></figure></div></section>
+
+    <section class="assembly wrap section-space" id="assembly" aria-labelledby="assembly-title">
+      <div class="section-label"><span>04 / СБОРКА</span><a href="/downloads/takmak-assembly.md" download>Сохранить руководство ↓</a></div>
+      <div class="section-heading"><h2 id="assembly-title">Сборка</h2><p>Компоненты, подготовка корпуса, плата и прошивка. Полный BOM и пошаговые фотографии будут добавлены.</p></div>
+      <div class="assembly-layout"><aside class="assembly-aside"><p class="eyebrow">ПЕРЕД НАЧАЛОМ</p><h3>Комплектация</h3><p>На фото изготовленная ревизия 3.0. Доступные исходники 3.1 ещё не проходили физическую сборку.</p><a class="text-link" href="#files">Перейти к файлам <span aria-hidden="true">↘</span></a></aside>
+      <div class="assembly-steps">
+        <details open><summary><span class="step-no">01</span><span>Выбрать профиль и компоненты</span><span class="expand" aria-hidden="true">+</span></summary><div class="step-content"><p>Выбери профиль корпуса и свитчи, затем подбери к ним кейкапы. Нижние части корпуса универсальные. В сборках автора стоят Choc v1 с MBK и Kailh MX с кейкапами Cherry — это примеры, а не обязательные комплекты.</p><div class="table-scroll"><table><thead><tr><th>Компонент</th><th>Низкий</th><th>Стандартный</th></tr></thead><tbody><tr><th>Свитчи</th><td>Choc v1 / v2</td><td>MX-совместимые</td></tr><tr><th>Кейкапы</th><td colspan="2">На выбор, под выбранные свитчи</td></tr><tr><th>Контроллеры · 2 шт.</th><td colspan="2">SuperMini nRF52840 или другие совместимые с nice!nano</td></tr><tr><th>Аккумуляторы · 2 шт.</th><td colspan="2">EEMB 383454LC · LiPo · 3,7 В · 720 мА·ч · разъём JST</td></tr><tr><th>Центральное устройство</th><td colspan="2">Отдельный донгл или левая половинка — задаётся прошивкой</td></tr><tr><th>Энкодеры</th><td colspan="2">EC11 с нажатием; правый — опционально</td></tr><tr><th>Экран слева</th><td colspan="2">OLED 0,91″ · 128×32 · I²C</td></tr></tbody></table></div><p class="pending-note">Контроллер и аккумулятор — по одному на половинку. Отдельный донгл, если выбран, добавляется к этому комплекту. EEMB 383454LC — модель аккумулятора, указанная автором; замену подбирают по габаритам корпуса. В BOM добавим hotswap-гнёзда, крепёж и reset-кнопку. Посадки выбранных свитчей и кейкапов нужно сопоставить с ревизией платы и корпусом.</p></div></details>
+        <details><summary><span class="step-no">02</span><span>Подготовить корпус</span><span class="expand" aria-hidden="true">+</span></summary><div class="step-content"><p>Скачай комплект своего профиля. Внутри — оригинальные STEP и STL для слайсера: верх и дно обеих половинок, reset-кнопки и крутилки. Размеры STL заданы в миллиметрах.</p><p>В низком профиле крутилка <strong>Low Profile Screen</strong> ставится слева, <strong>Low Profile Button</strong> — справа, если выбран энкодер. Для стандартного профиля используется <strong>Regular</strong>: один или два экземпляра по комплектации. Цвет печати любой.</p><p>Проверь масштаб, ориентацию деталей на столе и соответствие своей плате до печати полного комплекта. Материал, допуски и настройки печати пока не зафиксированы.</p></div></details>
+        <details><summary><span class="step-no">03</span><span>Подготовить плату и выбрать посадки</span><span class="expand" aria-hidden="true">+</span></summary><div class="step-content"><p>Универсальная плата используется для обеих сторон. В левой конфигурации лишняя колонка отделяется; экран подключается на левой половинке. Сначала сверь ревизию и ориентацию платы.</p><p>В 3D показана длинная клавиша большого пальца слева, отдельная клавиша и EC11 справа. Это один из вариантов; правая крутилка опциональна. Совмещённые посадки предусматривают альтернативы, а не одновременную установку всех компонентов.</p><p class="pending-note">Карта пайки по сторонам, точная линия отделения и фото этапов будут добавлены после сверки с изготовленной платой. Исходники 3.1 сейчас предназначены для изучения и доработки.</p></div></details>
+        <details><summary><span class="step-no">04</span><span>Разобраться с RGB-перемычками</span><span class="expand" aria-hidden="true">+</span></summary><div class="step-content"><p>В проверенной схеме <strong>3.1</strong> перемычки JP1–JP5 обходят части цепочки RGB. Для работы клавиш без RGB они не требуются.</p><table><thead><tr><th>Перемычка</th><th>Обходит LED</th></tr></thead><tbody><tr><th>JP1</th><td>D72, D40, D48</td></tr><tr><th>JP2</th><td>D65</td></tr><tr><th>JP3</th><td>D62</td></tr><tr><th>JP4</th><td>D56</td></tr><tr><th>JP5</th><td>D80</td></tr></tbody></table><p>Если участок используется — обход разомкнут. Если пропущен — обход замыкается, а соответствующие LED не устанавливаются либо изолируются. Замыкать обход поверх работающих LED нельзя: он соединит выходы данных.</p><p class="pending-note">Это назначение перемычек по схеме, а не готовая таблица «левая / правая». Конкретный набор зависит от выбранных деталей и отделённых частей платы.</p></div></details>
+        <details><summary><span class="step-no">05</span><span>Настроить ZMK</span><span class="expand" aria-hidden="true">+</span></summary><div class="step-content"><p>Для обоих профилей можно выбрать отдельный донгл или левую центральную половинку — это определяется прошивкой. У автора низкопрофильная сборка работает с донглом, стандартная — с левой центральной половинкой.</p><p>Буквенные раскладки на фотографиях различаются. Подписи в 3D показывают сборки автора. Свою раскладку задай в keymap; русские буквы помещаются без переноса на дополнительные слои.</p><a class="text-link" href="https://github.com/seniorsoftwarevlogger/zmk-keyboard-takmak" target="_blank" rel="noreferrer">Модуль Takmak для ZMK ↗</a><p class="pending-note">Готовые бинарные файлы не предлагаются: версии исходников ещё не сопоставлены с прошивками реальных устройств.</p></div></details>
+        <details><summary><span class="step-no">06</span><span>Проверить и закрыть корпус</span><span class="expand" aria-hidden="true">+</span></summary><div class="step-content"><p>До окончательной сборки проверь каждую клавишу, нажатие и оба направления энкодеров, экран и связь половинок с центральным устройством.</p><p>Примерь плату к корпусу, проверь свободный ход клавиш и reset-кнопок, зазоры крутилок. После установки дна повтори проверку. Пошаговые фотографии внутренней сборки и схема крепежа пока готовятся.</p></div></details>
+      </div></div>
+    </section>
+
+    <section class="files wrap section-space" id="files" aria-labelledby="files-title"><div class="section-label"><span>05 / ФАЙЛЫ</span><span>ИСХОДНИКИ И МОДЕЛИ</span></div><div class="section-heading"><h2 id="files-title">Файлы</h2><p>Модели для печати, исходники платы и модуль ZMK. В архивах корпусов есть обе половинки и модели крутилок; печатай детали для своей комплектации.</p></div>
+      <div class="download-list">
+        <a class="download-row" href="/downloads/takmak-low-case.zip" download><span class="file-type">STEP + STL</span><span class="file-description"><strong>Корпус · низкий профиль</strong><span>Обе половинки, reset-кнопки, две крутилки · 8 моделей</span></span><span class="file-meta">ZIP / 0,97 МБ</span><span class="download-arrow" aria-hidden="true">↓</span></a>
+        <a class="download-row" href="/downloads/takmak-regular-case.zip" download><span class="file-type">STEP + STL</span><span class="file-description"><strong>Корпус · стандартный профиль</strong><span>Обе половинки, reset-кнопки, модель крутилки · 7 моделей</span></span><span class="file-meta">ZIP / 0,97 МБ</span><span class="download-arrow" aria-hidden="true">↓</span></a>
+        <a class="download-row" href="/downloads/takmak-pcb-3.1-source.zip" download><span class="file-type">KICAD</span><span class="file-description"><strong>Универсальная плата 3.1 <span class="file-badge">В разработке</span></strong><span>PCB, схема и проект · без Gerber и внешних библиотек</span></span><span class="file-meta">ZIP / 0,85 МБ</span><span class="download-arrow" aria-hidden="true">↓</span></a>
+        <a class="download-row" href="https://github.com/seniorsoftwarevlogger/zmk-keyboard-takmak" target="_blank" rel="noreferrer"><span class="file-type">ZMK</span><span class="file-description"><strong>Исходники прошивки</strong><span>Модуль клавиатуры · конфигурация и keymap</span></span><span class="file-meta">GITHUB</span><span class="download-arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="files-footnote"><p><strong>О ревизиях.</strong> 3.0 — последняя изготовленная плата. 3.1 добавляет посадки под Choc hotswap и пока не изготовлена. Проверенный производственный архив 3.0 ещё не выделен.</p><p>Файлы аппаратуры — для некоммерческого использования, согласно исходному README. У прошивки и сторонних библиотек свои лицензии. <a href="/downloads/manifest.json" download>Контрольные суммы ↗</a></p></div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><div><a class="brand" href="#" aria-label="Takmak — наверх"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>takmak</a><p>Takmak · Красноярск</p></div><div class="footer-links"><a href="/studio.html">Студия ракурсов ↗</a><a href="https://github.com/seniorsoftwarevlogger/ssv_split" target="_blank" rel="noreferrer">Проект на GitHub ↗</a></div></footer>
+  <script type="module" src="/src/site.js"></script>
 </body>
 </html>

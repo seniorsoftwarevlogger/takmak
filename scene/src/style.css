@@ -221,3 +221,31 @@ dialog p { font-size: 13px; line-height: 1.75; color: #666; }
 .floating-control { margin-top: 0; }
 @media (max-width: 900px) { #workspace { min-height: 1260px; } }
 @media (max-width: 540px) { #workspace { min-height: 1290px; } }
+
+/* Technical illustration: only the object's own colors, no decorative backdrop. */
+.render-style { display:flex; border:1px solid var(--line); border-radius:5px; padding:3px; margin:0 0 18px; grid-column:1 / -1; }
+.render-style button { flex:1; padding:8px 6px; font-size:12px; border-radius:3px; color:var(--muted); }
+.render-style button.active { background:#f2f2f2; color:var(--ink); }
+body[data-render-style="technical"] #viewport::before { display:none; }
+@media (min-width:901px) { .range-control { margin-bottom:20px; } .check-control { margin:20px 0; } }
+
+.check-control.adaptive-control { margin:0 0 20px; }
+body[data-render-style="studio"] .adaptive-control { opacity:.45; }
+@media (min-width:901px) { #app { min-height:950px; } }
+@media (max-width:900px) { #workspace { min-height:1350px; } }
+@media (max-width:540px) { #workspace { min-height:1380px; } }
+
+/* The same geometry powers the product presentation without the editor UI. */
+body[data-render-style="technical"] #viewport::before { display:block; opacity:.045; }
+.embedded-scene, .embedded-scene #viewport { background:transparent; }
+.embedded-scene #app { height:100dvh; min-height:0; overflow:hidden; }
+.embedded-scene #workspace { height:100%; min-height:0; }
+.embedded-scene .header, .embedded-scene .intro, .embedded-scene .view-tabs,
+.embedded-scene #controls, .embedded-scene .model-caption, .embedded-scene .canvas-toolbar,
+.embedded-scene footer, .embedded-scene .scene-coordinate { display:none; }
+.embedded-scene #viewport { inset:0; height:100%; }
+.embedded-scene #viewport::before { display:none !important; }
+.embedded-scene canvas { cursor:grab; }
+.embedded-scene canvas:active { cursor:grabbing; }
+.embedded-scene #loading { inset:0; height:auto; background:transparent; }
+:root:has(body.embedded-scene) { background:transparent; }

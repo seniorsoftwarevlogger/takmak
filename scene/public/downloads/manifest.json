@@ -1,0 +1,20 @@
+[
+  {
+    "file": "takmak-low-case.zip",
+    "label": "low",
+    "bytes": 1014870,
+    "sha256": "c6dfba68665a88ee470659ee52acde5b90a0f1dd57b85b1288cc1920bb49b102"
+  },
+  {
+    "file": "takmak-regular-case.zip",
+    "label": "regular",
+    "bytes": 1018353,
+    "sha256": "de8dccd7713f9e88ab720e1a0047905be659309af0d70a8e09a1e78ebb242aa6"
+  },
+  {
+    "file": "takmak-pcb-3.1-source.zip",
+    "label": "PCB 3.1",
+    "bytes": 888636,
+    "sha256": "f6b8a4b14dd8611524e5a88f8aa9dfb3989d227a3840386d3d40c5c23b0219d4"
+  }
+]

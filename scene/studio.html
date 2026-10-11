@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#ffffff"><title>Takmak — студия формы</title></head>
+<body>
+  <div id="app">
+    <header class="header">
+      <a class="wordmark" href="./" aria-label="Takmak, основной сайт"><span class="mark"><i></i><i></i><i></i><i></i></span>takmak</a>
+      <div class="edition"><span class="status-dot"></span>СТУДИЯ ФОРМЫ <span class="edition-number">/ 01</span></div>
+      <div class="header-actions"><button id="browse-poses" class="button button-light" disabled>Ракурсы <span>06</span></button><button id="save" class="button button-dark" disabled><span>Зафиксировать ракурс</span><span aria-hidden="true">↗</span></button></div>
+    </header>
+    <main id="workspace">
+      <section class="intro" aria-label="Описание сцены"><div class="eyebrow">SPLIT BY DESIGN</div><h1>Две половинки.<br><em>Твой ракурс.</em></h1><p>Названа в честь скалы рядом с Красноярском.<br>Её топография — на плате и здесь.</p></section>
+      <div class="view-tabs" role="group" aria-label="Исполнение клавиатуры">
+        <button class="variant active" data-profile="low" aria-pressed="true"><span class="swatch light"></span>Низкий профиль</button>
+        <button class="variant" data-profile="regular" aria-pressed="false"><span class="swatch dark"></span>Стандартный</button>
+        <button class="variant compare-button" data-profile="compare" aria-pressed="false" title="Оба исполнения в одной сцене">Оба</button>
+      </div>
+      <div id="viewport" aria-label="Интерактивная 3D-сцена Takmak"><canvas id="canvas" aria-label="Вращение: перетащите мышью. Масштаб: колёсико. Перемещение: правая кнопка мыши." tabindex="0"></canvas></div>
+      <div id="loading" role="status"><div class="loader-ring"></div><strong>Собираем Takmak</strong><span id="loading-text">Загружаем геометрию из STEP</span></div>
+      <aside id="controls" aria-label="Настройки композиции">
+        <button id="panel-toggle" aria-expanded="true" aria-controls="panel-content"><span>Композиция</span><span class="panel-icon">−</span></button>
+        <div id="panel-content">
+          <div class="render-style" role="group" aria-label="Стиль рендера"><button data-render-style="technical" class="active" aria-pressed="true">Контуры</button><button data-render-style="studio" aria-pressed="false">Студийный</button></div>
+          <label class="check-control adaptive-control"><span>Адаптивные контуры</span><input type="checkbox" id="adaptive-contours" checked><span class="toggle" aria-hidden="true"></span></label>
+          <div class="control-heading"><span>ПОВОРОТ ПОЛОВИНКИ</span><span class="tiny-dot"></span></div>
+          <div class="segmented" role="group" aria-label="Выбор половинки"><button data-side="left" class="active" aria-pressed="true">Левая</button><button data-side="right" aria-pressed="false">Правая</button></div>
+          <div class="range-control"><label for="yaw">Разворот <output id="yaw-value">−12°</output></label><input type="range" id="yaw" min="-70" max="70" value="-12" step="1"></div>
+          <div class="range-control"><label for="tilt">Наклон <output id="tilt-value">8°</output></label><input type="range" id="tilt" min="-35" max="45" value="8" step="1"></div>
+          <div class="range-control"><label for="roll">Крен <output id="roll-value">−6°</output></label><input type="range" id="roll" min="-35" max="35" value="-6" step="1"></div>
+          <div class="divider"></div>
+          <div class="range-control"><label for="gap">Расстояние <output id="gap-value">42 мм</output></label><input type="range" id="gap" min="5" max="120" value="42" step="1"></div>
+          <div class="range-control"><label for="lift">Высота левой <output id="lift-value">12 мм</output></label><input type="range" id="lift" min="-35" max="55" value="12" step="1"></div>
+          <label class="check-control"><span>Легенды клавиш</span><input type="checkbox" id="legends" checked><span class="toggle" aria-hidden="true"></span></label>
+          <label class="check-control floating-control"><span>Лёгкое парение</span><input type="checkbox" id="floating" checked><span class="toggle" aria-hidden="true"></span></label>
+          <div class="panel-actions"><button id="reset">Сбросить</button><button id="restore" disabled>Мой ракурс ↗</button></div>
+        </div>
+      </aside>
+      <section class="model-caption" aria-live="polite"><div class="caption-index">01 <span>/ TAKMAK</span></div><h2 id="profile-name">Низкий профиль</h2><p id="profile-spec">Choc v1 · MBK · отдельный донгл</p><div class="color-dots"><span class="dot-white"></span><span class="dot-orange"></span><small id="finish-name">Белый / оранжевый</small></div></section>
+      <div class="canvas-toolbar" role="group" aria-label="Камера"><button data-view="perspective" class="active" aria-pressed="true">¾</button><button data-view="top" aria-pressed="false">Сверху</button><button data-view="front" aria-pressed="false">Спереди</button><span class="toolbar-separator"></span><button id="snapshot" title="Скачать изображение сцены">PNG ↗</button></div>
+      <div class="scene-coordinate">X <span></span> Y <span></span> Z</div>
+    </main>
+    <footer><span><i class="mouse-icon"></i>Тяни — вращай <b>·</b> Колёсико — масштаб</span><span>Корпуса и крутилки из STEP <b>·</b> Кейкапы и свитчи приближённые</span><button id="details-button" aria-expanded="false">О модели ↗</button></footer>
+    <dialog id="pose-gallery" aria-labelledby="gallery-title">
+      <div class="gallery-heading"><div><div class="eyebrow">TAKMAK / РАКУРСЫ</div><h2 id="gallery-title">Найти свой угол.</h2><p>Два твоих ракурса и четыре варианта вокруг второго.<br>Нажми на карточку, чтобы продолжить вращать её в сцене.</p></div><button id="close-gallery" class="close" aria-label="Закрыть ракурсы">×</button></div>
+      <div class="gallery-options"><span>Одинаковые свет и масштаб · низкий профиль</span><button id="download-grid">Скачать сетку PNG ↗</button></div>
+      <div id="pose-grid" class="pose-grid"></div>
+      <div class="gallery-note"><strong>Такмак · Красноярск</strong><p>Скала рядом с родным городом автора. Её топография украшает плату — здесь тот же рисунок из предоставленного DXF.</p></div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <dialog id="details"><button id="close-details" class="close" aria-label="Закрыть">×</button><div class="eyebrow">ОБ ЭТОЙ ИТЕРАЦИИ</div><h2>Геометрия настоящая.<br>Сборка — первая.</h2><p>Корпуса, нижние части, reset-кнопки и крутилки конвертированы из твоих STEP. Центры клавиш получены из отверстий в корпусах.</p><p>Поверхности кейкапов Cherry / MBK, видимые части свитчей и экран пока выполнены как визуальные приближения. Подписи клавиш ориентируются на фото. Плата и внутренние компоненты ещё не добавлены.</p><p>Последняя изготовленная плата — 3.0. Проект 3.1 с Choc hotswap пока не изготовлен. Эта сцена не подтверждает механическую совместимость ревизий.</p><p>«Зафиксировать ракурс» сохраняет камеру и положения половинок в браузере и скачивает JSON. Этот файл можно передать для следующей итерации.</p><div class="details-bottom">Локальная сцена · исходные CAD-файлы не изменены</div></dialog>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
