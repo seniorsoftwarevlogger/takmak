@@ -1,0 +1,12 @@
+file_format: "1"
+id: takmak
+name: Takmak
+type: shield
+url: https://github.com/seniorsoftwarevlogger/takmak-zmk/
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
+siblings:
+  - takmak_left
+  - takmak_right
