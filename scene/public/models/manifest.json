@@ -3,7 +3,7 @@
   "parts": {
     "encoder-knob-16mm-3mm-low-profile-button": {
       "file": "models/encoder-knob-16mm-3mm-low-profile-button.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Low Profile Button.step",
+      "source": "3d models/step/Encoder Knob 16mm 3mm - Low Profile Button.step",
       "sourceSha256": "02136852cfd910fe2047a0f49f7dbc0ce12575b52bdfa7081b295a850d0d09c6",
       "min": [
         52.16356592187711,
@@ -30,7 +30,7 @@
     },
     "encoder-knob-16mm-3mm-low-profile-screen": {
       "file": "models/encoder-knob-16mm-3mm-low-profile-screen.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Low Profile Screen.step",
+      "source": "3d models/step/Encoder Knob 16mm 3mm - Low Profile Screen.step",
       "sourceSha256": "fa9d3fb2753c8e5b06328491fedfe00816049d9bb3026c416b8c8382420598b1",
       "min": [
         -9.236434078122898,
@@ -57,7 +57,7 @@
     },
     "encoder-knob-16mm-3mm-regular": {
       "file": "models/encoder-knob-16mm-3mm-regular.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Encoder Knob 16mm 3mm - Regular.step",
+      "source": "3d models/step/Encoder Knob 16mm 3mm - Regular.step",
       "sourceSha256": "fb4e2f7e6a1c531aa0759b97764109f2f9e2e807756e5c34424c2ee1b5ab62c8",
       "min": [
         10.873565921877102,
@@ -84,7 +84,7 @@
     },
     "takmak-left-low-top": {
       "file": "models/takmak-left-low-top.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Low Top.step",
+      "source": "3d models/step/Takmak - Left Low Top.step",
       "sourceSha256": "d6964f8a9ccd31cd9f77dc3961f19e40579c52edf1e2b1fc1021e71a1184b1a3",
       "min": [
         -152.872837424278,
@@ -111,7 +111,7 @@
     },
     "takmak-left-regular-top": {
       "file": "models/takmak-left-regular-top.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Regular Top.step",
+      "source": "3d models/step/Takmak - Left Regular Top.step",
       "sourceSha256": "f5fc4f4f4d778a338397b8e59fc38594d1cc9c24d9bd5aa20b5178587fbbb837",
       "min": [
         -152.872837424278,
@@ -138,7 +138,7 @@
     },
     "takmak-left-reset-button": {
       "file": "models/takmak-left-reset-button.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Reset Button.step",
+      "source": "3d models/step/Takmak - Left Reset Button.step",
       "sourceSha256": "2d7f07c495ff055324620b05e1f14002b27960d52cbd348e856a2dcc993b2d63",
       "min": [
         -108.77250887820364,
@@ -165,7 +165,7 @@
     },
     "takmak-left-universal-bottom": {
       "file": "models/takmak-left-universal-bottom.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Left Universal Bottom.step",
+      "source": "3d models/step/Takmak - Left Universal Bottom.step",
       "sourceSha256": "4193c4869aca8d448ae2fe88c1e03ee4a81a74f1af3e22d4c6f7d328c82f3dfe",
       "min": [
         -152.872837424278,
@@ -192,7 +192,7 @@
     },
     "takmak-right-low-top": {
       "file": "models/takmak-right-low-top.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Low Top.step",
+      "source": "3d models/step/Takmak - Right Low Top.step",
       "sourceSha256": "ed9f225e3ab11b027d3082a18cd8bf9baf9d7f7eee140f3873424e3b75d05244",
       "min": [
         3.10633046551063,
@@ -219,7 +219,7 @@
     },
     "takmak-right-regular-top": {
       "file": "models/takmak-right-regular-top.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Regular Top.step",
+      "source": "3d models/step/Takmak - Right Regular Top.step",
       "sourceSha256": "41759eafb6052a1b451a51ce60a8fc125b1ab109c03d56b1dab8a08d12de273e",
       "min": [
         3.10633046551063,
@@ -246,7 +246,7 @@
     },
     "takmak-right-reset-button": {
       "file": "models/takmak-right-reset-button.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Reset Button.step",
+      "source": "3d models/step/Takmak - Right Reset Button.step",
       "sourceSha256": "9d18e19a43639ccc7819c3f44be04e657e2fbec740879e3973c6411464672928",
       "min": [
         91.256094291245,
@@ -273,7 +273,7 @@
     },
     "takmak-right-universal-bottom": {
       "file": "models/takmak-right-universal-bottom.glb",
-      "source": "/Volumes/4T/workspace/takmak/3d models/step/Takmak - Right Universal Bottom.step",
+      "source": "3d models/step/Takmak - Right Universal Bottom.step",
       "sourceSha256": "1bbbdf703f0822675b0b7068dd638aa6f6665cb03286ff7cebef4074f3940410",
       "min": [
         3.10633046551063,

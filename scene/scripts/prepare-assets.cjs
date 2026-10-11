@@ -41,7 +41,7 @@ function bounds(meshes){let min=[Infinity,Infinity,Infinity],max=[-Infinity,-Inf
   const r=occt.ReadStepFile(source,{linearUnit:'millimeter',linearDeflectionType:'absolute_value',linearDeflection:0.06,angularDeflection:0.22});
   if(!r.success||!r.meshes.length)throw Error(`Could not import ${input.path}`);
   const id=input.name.toLowerCase().replace(/[^a-z0-9]+/g,'-');const binary=glb(r,input.name);fs.writeFileSync(path.join(out,id+'.glb'),binary);
-  manifest.parts[id]={file:`models/${id}.glb`,source:input.path,sourceSha256:crypto.createHash('sha256').update(source).digest('hex'),...bounds(r.meshes),triangles:r.meshes.reduce((n,m)=>n+m.index.array.length/3,0),bytes:binary.length};
+  manifest.parts[id]={file:`models/${id}.glb`,source:path.relative(root,input.path),sourceSha256:crypto.createHash('sha256').update(source).digest('hex'),...bounds(r.meshes),triangles:r.meshes.reduce((n,m)=>n+m.index.array.length/3,0),bytes:binary.length};
   console.log(id, 'size',manifest.parts[id].size.map(n=>n.toFixed(2)).join(' × '),'triangles',manifest.parts[id].triangles);
  }
  fs.writeFileSync(path.join(out,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');

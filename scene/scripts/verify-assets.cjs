@@ -5,7 +5,7 @@ let triangles=0;
 for(const [id,part] of Object.entries(data.parts)){
  const b=fs.readFileSync(path.join(base,'public',part.file));
  assert.equal(b.readUInt32LE(0),0x46546c67,id);assert.equal(b.readUInt32LE(4),2,id);assert.equal(b.readUInt32LE(8),b.length,id);
- assert.equal(crypto.createHash('sha256').update(fs.readFileSync(part.source)).digest('hex'),part.sourceSha256,id);
+ assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.resolve(base,'..',part.source))).digest('hex'),part.sourceSha256,id);
  const n=b.readUInt32LE(12),j=JSON.parse(b.subarray(20,20+n)),binStart=20+n+8;
  assert.equal(j.meshes.length,1,id);assert.equal(j.meshes[0].primitives.length,1,id);
  for(const a of j.accessors){const v=j.bufferViews[a.bufferView];assert(v.byteOffset+v.byteLength<=j.buffers[0].byteLength,id);if(a.componentType===5126){for(let off=binStart+v.byteOffset;off<binStart+v.byteOffset+v.byteLength;off+=4)assert(Number.isFinite(b.readFloatLE(off)),id);}}

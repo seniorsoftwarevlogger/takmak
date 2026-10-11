@@ -10,7 +10,7 @@ manifest = json.loads((public / 'models/manifest.json').read_text())
 notice = '''Takmak — файлы проекта
 
 Автор проекта: seniorsoftwarevlogger
-https://github.com/seniorsoftwarevlogger/ssv_split
+https://github.com/seniorsoftwarevlogger/takmak
 Исходный README запрещает коммерческое использование:
 “You may not use this for any commercial purpose.”
 Не предполагается единая лицензия на сторонние библиотеки или прошивку.
@@ -57,7 +57,7 @@ for profile in ['low','regular']:
     with zipfile.ZipFile(out/name,'w',zipfile.ZIP_DEFLATED) as archive:
         for id in ids:
             part = manifest['parts'][id]
-            source = Path(part['source'])
+            source = root / part['source']
             digest = hashlib.sha256(source.read_bytes()).hexdigest()
             assert digest == part['sourceSha256']
             archive.write(source,'STEP/'+source.name)

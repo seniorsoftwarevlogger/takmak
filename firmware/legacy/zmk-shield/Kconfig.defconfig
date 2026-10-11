@@ -1,0 +1,27 @@
+if SHIELD_TAKMAK_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Takmak"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+endif # ZMK_DISPLAY
+
+endif
+
+
+if SHIELD_TAKMAK_LEFT || SHIELD_TAKMAK_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif

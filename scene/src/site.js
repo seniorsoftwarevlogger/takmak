@@ -27,7 +27,7 @@ document.querySelectorAll('[data-profile]').forEach(button=>button.addEventListe
  document.querySelectorAll('[data-profile]').forEach(b=>{b.classList.toggle('selected',b===button);b.setAttribute('aria-pressed',String(b===button));});
  const data=profiles[profile];document.querySelector('#profile-description').textContent=data.description;
  for(const key of ['switches','keycaps','connection'])document.querySelector('#spec-'+key).textContent=data[key];
- document.querySelector('#hero-download').href=`/downloads/takmak-${profile}-case.zip`;present();
+ document.querySelector('#hero-download').href=`${import.meta.env.BASE_URL}downloads/takmak-${profile}-case.zip`;present();
 }));
 motion.addEventListener('click',()=>{animate=!animate;motionUI();present();});
 reduced.addEventListener('change',()=>{animate=!reduced.matches;motionUI();present();});

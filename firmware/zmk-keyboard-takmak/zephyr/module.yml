@@ -1,0 +1,15 @@
+name: zmk-keyboard-takmak
+build:
+  # List your dependencies
+  depends:
+  # Folder containing a "CMakeLists.txt" (. = root)
+  cmake: .
+  # Kconfig filepath
+  kconfig: Kconfig
+  settings:
+    # Folder containing a "boards" folder (. = root)
+    board_root: .
+    # Folder containing a "dts" folder (. = root)
+    dts_root: .
+    # Folder containing a "snippets" folder (. = root)
+    snippet_root: .

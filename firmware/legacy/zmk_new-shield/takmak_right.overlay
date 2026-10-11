@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "takmak.dtsi"
+
+&default_transform {
+	col-offset = <7>;
+};
+
+&kscan0 {
+  row-gpios
+			= <&pro_micro 18  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro 15  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			;
+      
+	col-gpios
+		= <&pro_micro 7  GPIO_ACTIVE_HIGH>
+		, <&pro_micro 6  GPIO_ACTIVE_HIGH>
+		, <&pro_micro 5  GPIO_ACTIVE_HIGH>
+    , <&pro_micro 4  GPIO_ACTIVE_HIGH>
+    , <&pro_micro 21  GPIO_ACTIVE_HIGH>
+		, <&pro_micro 20 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 19 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 3 GPIO_ACTIVE_HIGH>
+		;
+};
+
+// // key matrix pins PCB
+// #define MATRIX_ROW_PINS_RIGHT { E6, B4, F7, B1, B3 }
+// #define MATRIX_COL_PINS_RIGHT { D1, D0, D4, C6, D7, F4, F5, F6 }
+
+&right_encoder {
+    status = "okay";
+};

@@ -1,0 +1,14 @@
+file_format: "1"
+id: takmak
+name: Takmak
+type: shield
+url: https://github.com/seniorsoftwarevlogger/takmak-zmk/
+requires: [nice_nano_v2]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+siblings:
+  - takmak_left
+  - takmak_right

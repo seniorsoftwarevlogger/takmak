@@ -1,0 +1,92 @@
+/*
+ * Copyright (c) 2020 Pete Johanson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/led/led.h>
+#include "takmak-layouts.dtsi"
+
+&physical_layout0 {
+  transform = <&default_transform>; // Label of the matrix transform this layout uses
+};
+
+/ {  
+  chosen {
+      zmk,kscan = &mock_kscan;
+      zephyr,display = &oled;
+      zmk,physical-layout = &physical_layout0;
+      zmk,underglow = &led_strip;
+  };
+
+  mock_kscan: kscan0 {
+      compatible = "zmk,kscan-mock";
+      columns = <0>;
+      rows = <0>;
+      events = <0>;
+  };
+
+  ext_power_mock: ext_power {
+      compatible = "zmk,ext-power-generic";
+      label = "EXT_POWER";
+      control-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;
+      init-delay-ms = <10>;
+  };
+
+  left_encoder: encoder_left {
+      compatible = "alps,ec11";
+      a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+      b-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+      steps = <80>;
+      status = "disabled";
+  };
+
+  right_encoder: encoder_right {
+      compatible = "alps,ec11";
+      a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+      b-gpios = <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+      steps = <80>;
+      status = "disabled";
+  };
+
+  sensors: sensors {
+      compatible = "zmk,keymap-sensors";
+      sensors = <&left_encoder &right_encoder>;
+      triggers-per-rotation = <20>;
+  };
+
+  default_transform: keymap_transform_0 {
+    compatible = "zmk,matrix-transform";
+    columns = <15>;
+    rows = <5>;
+    map = <
+RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6)  RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(0,12) RC(0,13) RC(0,14)
+RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6)  RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11) RC(1,12) RC(1,13) RC(1,14)
+RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6)  RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11) RC(2,12) RC(2,13) RC(2,14)
+RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6)  RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11) RC(3,12) RC(3,13) RC(3,14)
+RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4)         RC(4,6)  RC(4,7)         RC(4,9) RC(4,10) RC(4,11) RC(4,12) RC(4,13) RC(4,14)
+    >;
+  };
+};
+
+&xiao_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+};
+
+&xiao_i2c {
+    status = "disabled";
+};

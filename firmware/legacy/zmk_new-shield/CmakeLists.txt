@@ -1,0 +1,18 @@
+# CMakeLists.txt - Add to your keymap directory
+
+# Add custom display source files
+target_sources(app PRIVATE custom_display.c)
+# OR for custom status screen:
+# target_sources(app PRIVATE custom_status_screen.c)
+
+# Kconfig options for custom display
+target_compile_definitions(app PRIVATE
+    CONFIG_ZMK_DISPLAY=y
+    CONFIG_ZMK_DISPLAY_STATUS_SCREEN_BUILT_IN=n
+    CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y
+    CONFIG_LVGL=y
+    CONFIG_DISPLAY=y
+    CONFIG_SPI=y
+)
+
+target_sources(app PRIVATE simple_boot_display.c)

@@ -1,30 +1,81 @@
-Takmak
-==
+# Takmak — No Compromise 65% Split Keyboard
 
-65% orthogonal staggered column split keyboard you've been looking for!   
+[Сайт и сборка](https://seniorsoftwarevlogger.github.io/takmak/) · [Студия ракурсов](https://seniorsoftwarevlogger.github.io/takmak/studio.html)
+
+Сплит-клавиатура с полной русской раскладкой, включая «Ъ», и минимумом изменений
+привычного расположения. Низкий и стандартный профили корпуса, универсальная
+плата для обеих половинок, варианты кнопок и энкодеров.
+
+Такмак — скала рядом с Красноярском. Её топография нанесена на шелкографию платы
+и используется в оформлении сайта.
+
+## Что лежит в репозитории
+
+| Каталог | Содержание |
+| --- | --- |
+| `scene/` | Сайт, интерактивная 3D-сцена, студия ракурсов и файлы для скачивания |
+| `3d models/step/` | Актуальные STEP-экспорты корпусов, reset-кнопок и крутилок |
+| `3d models/Takmak/`, `3d models/Encoder Knob 16mm 3mm/` | Исходные GLB-экспорты |
+| `3d models/*.stl`, `3d models/low profile/` | Более ранние модели из GitHub; не заменяют актуальные STEP |
+| `kicad/` | Универсальная PCB 3.1, схема и проект |
+| `Takmak-left/` | Более ранние проекты отдельной левой платы |
+| `gerber/` | Сохранённые Gerber-файлы из прежней версии репозитория; ревизия требует сверки |
+| `firmware/` | Снимки ZMK-модуля Takmak, модуля экрана донгла и исторических вариантов |
+| `qmk_firmware/`, `zmk_firmware/` | Исторические конфигурации; не готовые прошивки для всех современных сборок |
+| `assets/` | Фотография, исходная топография DXF и выбранные ракурсы |
+| `docs/` | Инвентаризация и история проекта |
+
+Полные деревья ZMK/Zephyr и локальные каталоги сборок сюда не копируются:
+в `firmware/` сохранены относящиеся к Takmak модули и конфигурации, зависимости
+основного модуля закреплены в его `config/west.yml`.
+
+## Ревизии и сборка
+
+**3.0** — последняя изготовленная плата. **3.1** добавляет посадки под Choc
+hotswap и пока не изготовлена. Gerber-файлы в `gerber/` исторические: они пока
+не сопоставлены с текущей схемой и не выдаются за производственный комплект 3.1.
+Недостающие проверенные производственные архивы и инструкции добавим позднее.
+
+На одну клавиатуру автор указал:
+
+- 2 × SuperMini nRF52840 или другие контроллеры, совместимые с nice!nano;
+- 2 × EEMB 383454LC LiPo, 3,7 В, 720 мА·ч, с JST;
+- Choc v1/v2 либо MX-совместимые свитчи с подходящими кейкапами;
+- EC11 с нажатием; правый энкодер опционален;
+- OLED 0,91″, 128×32, I²C на левой половинке.
+
+По одному контроллеру и аккумулятору на половинку. Отдельный донгл добавляется
+при выборе такой конфигурации. Полный BOM, карта пайки и проверенные UF2 ещё
+готовятся. [Текущий порядок сборки](scene/public/downloads/takmak-assembly.md).
+
+## Разработка сайта
+
+Node.js 24 и Python 3:
+
+```sh
+npm ci --prefix scene
+npm --prefix scene run dev
+```
+
+Проверка и сборка для GitHub Pages:
+
+```sh
+npm --prefix scene run check
+python3 scene/scripts/prepare-downloads.py
+PAGES_BASE_PATH=/takmak/ npm --prefix scene run build
+python3 scene/scripts/verify-site.py /takmak/
+```
+
+Workflow `.github/workflows/pages.yml` проверяет PR и публикует `scene/dist`
+при push в `master`. В Settings → Pages выбран источник **GitHub Actions**.
+Локальная разработка работает от `/`, публикация — от `/takmak/`.
+
+## История и использование
+
+[Видео проекта](https://www.youtube.com/watch?v=rlwhCginQdo) · [Исходная раскладка](http://www.keyboard-layout-editor.com/#/gists/c3e709013b8413fe901a2af3728c1977)
 
 You may not use this for any commercial purpose.
 
-Video
---
-
-[![Отчетное видео](https://img.youtube.com/vi/rlwhCginQdo/maxresdefault.jpg)](https://www.youtube.com/watch?v=rlwhCginQdo "Отчетное видео")
-
-Layout
---
-
-http://www.keyboard-layout-editor.com/#/gists/c3e709013b8413fe901a2af3728c1977
-
-Components
---
-
-2 x Pro Micros  
-2 x TRRS breakouts  
-71 x Chery MX compatible switches  
-71 x 1N4148 diodes  
-Wires  
-
-Why the name?
---
-
-Takmak is the name of a famous rock in [Stolby](https://en.wikipedia.org/wiki/Stolby_Nature_Sanctuary) national park that is located nearby my home town Krasnoyarsk. I guess the older I get the more nostalgic I become thus the name.
+Это исходное ограничение аппаратного проекта. У модулей прошивки и сторонних
+компонентов свои лицензии, сохранённые рядом с ними. Более ранний README
+сохранён в `docs/archive/github-readme-before-consolidation.md`.

@@ -1,0 +1,16 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: seniorsoftwarevlogger
+      url-base: https://github.com/seniorsoftwarevlogger
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: ccf20a1f5c1534a197d32279abbe0eaf651099d8
+      import: app/west.yml
+    - name: zmk-dongle-screen
+      remote: seniorsoftwarevlogger
+      revision: 2aecc3291141b85d2256ffb0a14325500a979165
+  self:
+    path: config
