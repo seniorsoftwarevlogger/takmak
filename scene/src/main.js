@@ -177,7 +177,8 @@ function fitCamera(){
   distance=Math.max(distance,Math.abs(v.x)/(tanH*.9)+v.z,Math.abs(v.y)/(tanV*.9)+v.z);
  }
  // The homepage starts closer; the studio keeps its full-fit framing.
- orbit.target.copy(target);camera.position.copy(target).addScaledVector(direction,EMBED?distance/1.18:distance);orbit.update();
+ const heroScale=1.18+.14*THREE.MathUtils.clamp((lastWidth-720)/304,0,1);
+ orbit.target.copy(target);camera.position.copy(target).addScaledVector(direction,EMBED?distance/heroScale:distance);orbit.update();
 }
 function resize(){
  const w=viewport.clientWidth,h=viewport.clientHeight;
