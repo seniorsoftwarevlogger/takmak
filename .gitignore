@@ -1,1 +1,10 @@
 .DS_Store
+
+# KiCad local state and automatic backups
+*.kicad_prl
+*.lck
+*-backups/
+*-bak
+fp-info-cache
+# Local audit output; reports are summarized in docs
+/analysis/

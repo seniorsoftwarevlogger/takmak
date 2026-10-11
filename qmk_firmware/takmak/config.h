@@ -26,19 +26,17 @@
 #define MATRIX_ROWS 10
 #define MATRIX_COLS 8
 
-// key matrix pins Wired
-/**/
-#define MATRIX_ROW_PINS { F4, F5, F6, F7, B1  }
-#define MATRIX_COL_PINS { D1, D0, D4, C6, D7, E6, B4, B5}
-#define MATRIX_ROW_PINS_RIGHT { F4, F5, F7, F6, B1 }
-#define MATRIX_COL_PINS_RIGHT { B5, B4, E6, D7, C6, D4, D0, D1 }
-/** /
+// key matrix pins PCB first revision
+// #define MATRIX_ROW_PINS { D1, D0, B3, B1, F7  }
+// #define MATRIX_COL_PINS { B5, F5, F4, B2, C6, D4, B4, E6}
+// #define MATRIX_ROW_PINS_RIGHT { E6, B4, F7, B1, B3 }
+// #define MATRIX_COL_PINS_RIGHT { D1, D0, D4, C6, D7, F4, F5, F6 }
+
 // key matrix pins PCB
 #define MATRIX_ROW_PINS { D1, D0, B3, B2, B6  }
-#define MATRIX_COL_PINS { B1, F7, F6, F5, D7, D4, C6, B5}
+#define MATRIX_COL_PINS { B5, C6, D4, D7, F5, F6, F7, B1 }
 #define MATRIX_ROW_PINS_RIGHT { E6, B4, F7, B1, B3 }
 #define MATRIX_COL_PINS_RIGHT { D1, D0, D4, C6, D7, F4, F5, F6 }
-/**/
 
 /* COL2ROW or ROW2COL */
 // COL2ROW means the black mark on your diode is facing to the rows, and between the switch and the rows.
