@@ -1,0 +1,8 @@
+if SHIELD_TAKMAK_TFT_LEFT
+config ZMK_KEYBOARD_NAME
+    default "Takmak TFT Left"
+config ZMK_SPLIT
+    default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+endif

@@ -1,0 +1,66 @@
+// Original left matrix/encoder; RGB stays on SPI3/P0.06.
+#include "../../../../zmk-keyboard-takmak/boards/shields/takmak/takmak_left.overlay"
+#include "../../../../zmk-keyboard-takmak/boards/shields/takmak/boards/nice_nano_v2.overlay"
+#include <dt-bindings/pinctrl/nrf-pinctrl.h>
+/ {
+    chosen { zephyr,display = &tft; };
+    /delete-node/ EXT_POWER;
+};
+&oled { status = "disabled"; };
+// Hold SuperMini external LDO enabled; no persisted external-power setting.
+&gpio0 {
+    tft_power_enable {
+        gpio-hog;
+        gpios = <13 GPIO_ACTIVE_HIGH>;
+        output-high;
+    };
+};
+&i2c0 { status = "disabled"; };
+&uart0 { status = "disabled"; };
+&pinctrl {
+    tft_spi_default: tft_spi_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>, <NRF_PSEL(SPIM_MOSI, 0, 17)>;
+        };
+    };
+    tft_spi_sleep: tft_spi_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 20)>, <NRF_PSEL(SPIM_MOSI, 0, 17)>;
+            low-power-enable;
+        };
+    };
+};
+&spi1 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&tft_spi_default>;
+    pinctrl-1 = <&tft_spi_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+    tft: st7789v@0 {
+        compatible = "sitronix,st7789v";
+        reg = <0>;
+        spi-max-frequency = <1000000>;
+        cmd-data-gpios = <&gpio1 1 GPIO_ACTIVE_LOW>;
+        reset-gpios = <&gpio1 2 GPIO_ACTIVE_LOW>;
+        // Native portrait window, as verified in the CircuitPython test.
+        width = <76>;
+        height = <284>;
+        x-offset = <82>;
+        y-offset = <18>;
+        mdac = <0x00>;
+        colmod = <0x55>;
+        ready-time-ms = <200>;
+        vcom = <0x20>;
+        gctrl = <0x35>;
+        lcm = <0x2c>;
+        gamma = <0x01>;
+        porch-param = [0c 0c 00 33 33];
+        cmd2en-param = [5a 69 02 01];
+        pwctrl1-param = [a4 a1];
+        pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+        nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+        ram-param = [00 f0];
+        rgb-param = [cd 08 14];
+    };
+};

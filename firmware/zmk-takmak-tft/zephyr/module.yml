@@ -1,0 +1,7 @@
+name: takmak-tft
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    board_root: .
+    dts_root: .

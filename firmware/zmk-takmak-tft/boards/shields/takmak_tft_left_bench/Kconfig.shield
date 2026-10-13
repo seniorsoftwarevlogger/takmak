@@ -1,0 +1,2 @@
+config SHIELD_TAKMAK_TFT_LEFT_BENCH
+    def_bool $(shields_list_contains,takmak_tft_left_bench)

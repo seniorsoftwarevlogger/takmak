@@ -1,0 +1,35 @@
+// Left central display test using the already connected TFT pins.
+// DO NOT use this variant as a working keyboard: its local matrix is disabled.
+#include "../takmak_tft_left/takmak_tft_left.overlay"
+/ {
+    chosen { zmk,kscan = &bench_kscan; };
+    bench_kscan: bench_kscan {
+        compatible = "zmk,kscan-mock";
+        rows = <5>;
+        columns = <7>;
+        events = <>;
+    };
+};
+&kscan0 { status = "disabled"; };
+&physical_layout0 { kscan = <&bench_kscan>; };
+&tft_spi_default {
+    group1 { psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, <NRF_PSEL(SPIM_MOSI, 0, 10)>; };
+};
+&tft_spi_sleep {
+    group1 { psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, <NRF_PSEL(SPIM_MOSI, 0, 10)>; };
+};
+&spi1 { cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; };
+&tft {
+    cmd-data-gpios = <&gpio0 31 GPIO_ACTIVE_LOW>;
+    reset-gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;
+};
+
+// Temporary screen button: a normally open switch from 008 to GND.
+/ {
+    bench_buttons {
+        compatible = "gpio-keys";
+        tft_mode_button: tft_mode_button {
+            gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        };
+    };
+};

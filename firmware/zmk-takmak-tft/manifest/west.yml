@@ -1,0 +1,52 @@
+manifest:
+  group-filter:
+  - -babblesim
+  - -optional
+  projects:
+  - name: zmk
+    url: https://github.com/zmkfirmware/zmk
+    revision: ccf20a1f5c1534a197d32279abbe0eaf651099d8
+    west-commands: scripts/west-commands.yml
+  - name: zephyr
+    url: https://github.com/zmkfirmware/zephyr
+    revision: dacab4875df72109b96cc8977547a0dc04875bcd
+    clone-depth: 1
+    west-commands: scripts/west-commands.yml
+  - name: nanopb
+    url: https://github.com/zmkfirmware/nanopb
+    revision: 8c60555d6277a0360c876bd85d491fc4fb0cd74a
+    path: modules/lib/nanopb
+  - name: zmk-studio-messages
+    url: https://github.com/zmkfirmware/zmk-studio-messages
+    revision: 6cb4c283e76209d59c45fbcb218800cd19e9339d
+    path: modules/msgs/zmk-studio-messages
+  - name: cmsis
+    url: https://github.com/zephyrproject-rtos/cmsis
+    revision: 5a00331455dd74e31e80efa383a489faea0590e3
+    path: modules/hal/cmsis
+    groups:
+    - hal
+  - name: hal_nordic
+    url: https://github.com/zephyrproject-rtos/hal_nordic
+    revision: 884c4d61746bc35fbd379c169fc87ddb56c6461d
+    path: modules/hal/nordic
+    groups:
+    - hal
+  - name: lvgl
+    url: https://github.com/zephyrproject-rtos/lvgl
+    revision: 8a6a2d1d29d17d1e4bdc94c243c146a39d635fdd
+    path: modules/lib/gui/lvgl
+  - name: segger
+    url: https://github.com/zephyrproject-rtos/segger
+    revision: 9d0191285956cef43daf411edc2f1a7788346def
+    path: modules/debug/segger
+    groups:
+    - debug
+  - name: tinycrypt
+    url: https://github.com/zephyrproject-rtos/tinycrypt
+    revision: 3e9a49d2672ec01435ffbf0d788db6d95ef28de0
+    path: modules/crypto/tinycrypt
+    groups:
+    - crypto
+  self:
+    path: manifest

@@ -1,0 +1,3 @@
+description: Cycle the three Takmak portrait display pages
+compatible: "takmak,behavior-tft-mode"
+include: zero_param.yaml
