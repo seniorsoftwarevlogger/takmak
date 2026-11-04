@@ -20,6 +20,18 @@ LOG_MODULE_REGISTER(takmak_oled, CONFIG_ZMK_LOG_LEVEL);
 #define OLED_WIDTH 128
 #define OLED_HEIGHT 32
 
+/* Five 8-pixel rows, 12-pixel pitch, one extra blank row between groups.
+ * The 68-pixel stack has equal 30-pixel margins on the 128-pixel display. */
+enum {
+    TEXT_HEIGHT = 8,
+    ROW_PITCH = 12,
+    OUTPUT_Y = 30,
+    LAYER_Y = OUTPUT_Y + ROW_PITCH,
+    BATTERY_Y = LAYER_Y + 2 * ROW_PITCH,
+    LEFT_Y = BATTERY_Y + ROW_PITCH,
+    RIGHT_Y = LEFT_Y + ROW_PITCH,
+};
+
 static const struct device *const oled = DEVICE_DT_GET(DT_CHOSEN(zephyr_display));
 /* SSD1306 and Zephyr's mono LVGL buffers use vertical, LSB-first tiles. */
 static uint8_t native_pixels[OLED_WIDTH * OLED_HEIGHT / 8];
@@ -132,10 +144,6 @@ static void refresh_status(lv_timer_t *timer) {
             break;
         }
     }
-    const lv_font_t *font = short_name ? &lv_font_montserrat_12 : &lv_font_unscii_8;
-    if (lv_obj_get_style_text_font(layer_label, LV_PART_MAIN) != font) {
-        lv_obj_set_style_text_font(layer_label, font, LV_PART_MAIN);
-    }
     snprintf(text, sizeof(text), "L%u", index);
     set_text(layer_label, short_name ? short_name : text);
     snprintf(text, sizeof(text), "L%3u", zmk_battery_state_of_charge());
@@ -159,6 +167,26 @@ static lv_obj_t *make_label(lv_obj_t *screen, const lv_font_t *font, int y) {
     return label;
 }
 
+static void draw_charge(lv_event_t *event) {
+    /* Native 8x8 lightning stays crisp at this panel's actual resolution. */
+    static const uint8_t rows[TEXT_HEIGHT] = {0x0c, 0x18, 0x30, 0x7e,
+                                            0x0c, 0x18, 0x30, 0x20};
+    lv_area_t origin;
+    lv_obj_get_coords(lv_event_get_target(event), &origin);
+    lv_draw_rect_dsc_t style;
+    lv_draw_rect_dsc_init(&style);
+    style.bg_color = lv_color_white();
+    for (int y = 0; y < TEXT_HEIGHT; y++) {
+        for (int x = 0; x < TEXT_HEIGHT; x++) {
+            if (rows[y] & BIT(7 - x)) {
+                lv_area_t pixel = {origin.x1 + x, origin.y1 + y,
+                                   origin.x1 + x, origin.y1 + y};
+                lv_draw_rect(lv_event_get_draw_ctx(event), &style, &pixel);
+            }
+        }
+    }
+}
+
 lv_obj_t *zmk_display_status_screen(void) {
     /* SSD1306 has no 90-degree orientation API. Keep the physical 128x32
      * panel and rotate its packed pixels after rendering a 32x128 screen. */
@@ -173,19 +201,17 @@ lv_obj_t *zmk_display_status_screen(void) {
     lv_obj_set_style_pad_all(screen, 0, LV_PART_MAIN);
     lv_obj_set_style_border_width(screen, 0, LV_PART_MAIN);
     lv_obj_clear_flag(screen, LV_OBJ_FLAG_SCROLLABLE);
-    output_label = make_label(screen, &lv_font_unscii_8, 2);
-    layer_label = make_label(screen, &lv_font_montserrat_12, 22);
-    lv_obj_t *divider = lv_obj_create(screen);
-    lv_obj_remove_style_all(divider);
-    lv_obj_set_pos(divider, 4, 44);
-    lv_obj_set_size(divider, 24, 1);
-    lv_obj_set_style_bg_color(divider, lv_color_white(), LV_PART_MAIN);
-    lv_obj_set_style_bg_opa(divider, LV_OPA_COVER, LV_PART_MAIN);
-    lv_obj_t *charge = make_label(screen, &lv_font_montserrat_16, 62);
+    output_label = make_label(screen, &lv_font_unscii_8, OUTPUT_Y);
+    layer_label = make_label(screen, &lv_font_unscii_8, LAYER_Y);
+    lv_obj_t *charge = lv_obj_create(screen);
+    lv_obj_remove_style_all(charge);
+    lv_obj_clear_flag(charge, LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_set_size(charge, TEXT_HEIGHT, TEXT_HEIGHT);
+    lv_obj_set_pos(charge, (OLED_HEIGHT - TEXT_HEIGHT) / 2, BATTERY_Y);
     /* Section icon, not a measurement of either half's charging current. */
-    set_text(charge, LV_SYMBOL_CHARGE);
-    left_label = make_label(screen, &lv_font_unscii_8, 84);
-    right_label = make_label(screen, &lv_font_unscii_8, 96);
+    lv_obj_add_event_cb(charge, draw_charge, LV_EVENT_DRAW_MAIN, NULL);
+    left_label = make_label(screen, &lv_font_unscii_8, LEFT_Y);
+    right_label = make_label(screen, &lv_font_unscii_8, RIGHT_Y);
     refresh_status(NULL);
     lv_timer_create(refresh_status, 200, NULL);
     return screen;

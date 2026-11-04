@@ -124,5 +124,8 @@
   "UF2 / 699 КБ": "UF2 / 699 KB",
   "Как обновить прошивку": "How to update the firmware",
   "Совместимость, запись UF2, фото экрана и контрольная сумма": "Compatibility, flashing, display photo and checksum",
-  "РУКОВОДСТВО": "UPDATE GUIDE"
+  "РУКОВОДСТВО": "UPDATE GUIDE",
+  "OLED v0.1.1: единый шрифт и ровные отступы. Обновляется только ведущая левая половинка с SSD1306; существующая совместимая прошивка правой сохраняется.": "OLED v0.1.1: one font and consistent spacing. This updates only the left central half with SSD1306; keep the existing compatible right-half firmware.",
+  "OLED · сбалансированная компоновка v0.1.1": "OLED · balanced layout v0.1.1",
+  "UF2 / 668 КБ": "UF2 / 668 KB"
 }

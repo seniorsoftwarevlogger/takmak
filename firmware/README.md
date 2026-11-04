@@ -1,10 +1,10 @@
 # Прошивки Takmak
 
-[OLED v0.1.0 — проверенная вертикальная версия](https://github.com/seniorsoftwarevlogger/takmak/releases/tag/oled-v0.1.0)
+[OLED v0.1.1 — сбалансированная вертикальная компоновка](https://github.com/seniorsoftwarevlogger/takmak/releases/tag/oled-v0.1.1)
 для ведущей левой половинки: [обновление](../docs/firmware/oled.md),
-[English](../docs/firmware/oled.en.md), [манифест](releases/oled-v0.1.0.json).
-UF2 и SHA-256 опубликованы в GitHub Releases. Фотография подтверждённого
-результата включена в руководство; резервные копии контроллеров не публикуются.
+[English](../docs/firmware/oled.en.md), [манифест](releases/oled-v0.1.1.json).
+UF2 и SHA-256 опубликованы в GitHub Releases. Предпросмотр новой компоновки и фото предыдущей
+версии включены в руководство; резервные копии контроллеров не публикуются.
 
 Экспериментальная прошивка большого TFT 76×284 находится в отдельной ветке
 [`codex/tft-screen`](https://github.com/seniorsoftwarevlogger/takmak/tree/codex/tft-screen/firmware/zmk-takmak-tft).

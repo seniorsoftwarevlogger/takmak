@@ -54,17 +54,15 @@ endchoice
 config LV_USE_THEME_MONO
     default y
 
-config LV_FONT_MONTSERRAT_16
-    default y
-
-config LV_FONT_MONTSERRAT_12
-    default y
-
 config LV_FONT_UNSCII_8
     default y
 
 choice LV_FONT_DEFAULT
-    default LV_FONT_DEFAULT_MONTSERRAT_16
+    default LV_FONT_DEFAULT_UNSCII_8
+endchoice
+
+choice ZMK_LV_FONT_DEFAULT_SMALL
+    default ZMK_LV_FONT_DEFAULT_SMALL_UNSCII_8
 endchoice
 
 config LV_Z_MEM_POOL_SIZE
