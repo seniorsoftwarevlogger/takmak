@@ -117,5 +117,12 @@
   "Takmak · Красноярск": "Takmak · Krasnoyarsk",
   "Студия ракурсов ↗": "Pose studio (RU) ↗",
   "Проект на GitHub ↗": "Project on GitHub ↗",
-  "Язык / Language": "Language"
+  "Язык / Language": "Language",
+  "OLED v0.1.0 проверена на клавиатуре автора. Обновляется только ведущая левая половинка с SSD1306; существующая совместимая прошивка правой сохраняется.": "OLED v0.1.0 has been verified on the author’s keyboard. This updates only the left central half with SSD1306; keep the existing compatible right-half firmware.",
+  "OLED · вертикальная прошивка v0.1.0": "OLED · portrait firmware v0.1.0",
+  "Ведущая левая · nice!nano v2 / SuperMini · SSD1306 · 32×128": "Left central · nice!nano v2 / SuperMini · SSD1306 · 32×128",
+  "UF2 / 699 КБ": "UF2 / 699 KB",
+  "Как обновить прошивку": "How to update the firmware",
+  "Совместимость, запись UF2, фото экрана и контрольная сумма": "Compatibility, flashing, display photo and checksum",
+  "РУКОВОДСТВО": "UPDATE GUIDE"
 }

@@ -44,6 +44,34 @@ config I2C
 config SSD1306
     default y
 
+if ZMK_SPLIT_ROLE_CENTRAL
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+# Monochrome portrait screen fonts and allocation headroom.
+config LV_USE_THEME_MONO
+    default y
+
+config LV_FONT_MONTSERRAT_16
+    default y
+
+config LV_FONT_MONTSERRAT_12
+    default y
+
+config LV_FONT_UNSCII_8
+    default y
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_16
+endchoice
+
+config LV_Z_MEM_POOL_SIZE
+    default 8192
+
+endif # ZMK_SPLIT_ROLE_CENTRAL
+
 endif # ZMK_DISPLAY
 
 endif # end SHIELD_TAKMAK_LEFT

@@ -24,6 +24,8 @@ class English(HTMLParser):
             values.pop('aria-current', None)
             if values['data-language'] == 'en': values['aria-current'] = 'page'
         if tag == 'iframe': values['src'] += '&lang=en'
+        if values.get('href', '').endswith('/docs/firmware/oled.md'):
+            values['href'] = values['href'].replace('oled.md', 'oled.en.md')
         if values.get('href', '').endswith('downloads/takmak-assembly.md'):
             values['href'] = values['href'].replace('takmak-assembly.md', 'takmak-assembly.en.md')
         encoded = ''.join(f' {key}' if value is None else f' {key}="{escape(translate(value), quote=True)}"' for key, value in values.items())

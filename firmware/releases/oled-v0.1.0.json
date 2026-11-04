@@ -1,0 +1,64 @@
+{
+  "version": "oled-v0.1.0",
+  "date": "2026-11-04",
+  "artifact": {
+    "file": "takmak-oled-left-central-v0.1.0.uf2",
+    "bytes": 715264,
+    "sha256": "a8d8899c9b5205647a85baefde905de175f598161424d74e7d0d5000d187b868",
+    "uf2_family": "0xADA52840"
+  },
+  "target": {
+    "board": "nice_nano_v2",
+    "shield": "takmak_left",
+    "role": "standalone_left_central",
+    "display": "SSD1306 128x32, portrait 32x128"
+  },
+  "source": {
+    "repository": "https://github.com/seniorsoftwarevlogger/takmak",
+    "tag": "oled-v0.1.0",
+    "module": "firmware/zmk-keyboard-takmak",
+    "sha256": {
+      "CMakeLists.txt": "b5274bfccc45746eb42a4f4c1c5a9d6a2b13102adc87408d9f64286c69b15da2",
+      "Kconfig": "f149fd981f2e8c90ea744ec500bbb72f74d978911b4a69f5a6f44698b5338030",
+      "boards/shields/takmak/Kconfig.defconfig": "15a0857ceafbff63bc193802f85315f2cc8db11a010a0109d18636302b704b6e",
+      "boards/shields/takmak/Kconfig.shield": "4ecaf7a1d1af62f8f66503e38f9ab0c270ebf0e0232763b4ac79f1074f373551",
+      "boards/shields/takmak/boards/nice_nano.overlay": "64dae36330fa51fe7b459fec9c26ada2a0967e69f48550de256afe116dc4f663",
+      "boards/shields/takmak/boards/nice_nano_v2.overlay": "b3c55fa93a6e789e2840a9f003b4c019b7abc90545386233205aab7d88491956",
+      "boards/shields/takmak/boards/seeeduino_xiao_ble.overlay": "fd8f0dc1f1b140175afde9c49054b4e07d1b8524ca374eefa8d3c75846b9be56",
+      "boards/shields/takmak/takmak-layouts.dtsi": "144cec1923cea2224d58878e407e89b30200fa5a46c691a13dd06b8b6e220423",
+      "boards/shields/takmak/takmak.dtsi": "1d76824b51f933f986111c9cf9bb5b6043a8ec22cad0d73f0d630ad3d7280203",
+      "boards/shields/takmak/takmak.keymap": "6340fa0136f4424ecd7c6fd6dcb8f26a45bc7080c616b4938844299407b8b5ee",
+      "boards/shields/takmak/takmak_dongle.conf": "6b9ba93c8f4d3fa01f7b4582af53d4a5b44a4ec22a6a18e17d11740393ae5626",
+      "boards/shields/takmak/takmak_dongle.overlay": "bd01963445fa8e883591c67546479942098bd1ede40f0cdbac3b4924739e6f92",
+      "boards/shields/takmak/takmak_left.conf": "dba40b5316e1788e178beafaaec4a832dee5d985e2c99e03a58891b554e5f1a8",
+      "boards/shields/takmak/takmak_left.overlay": "c28486331b5a1b8e37bf4127237d083dbd90064d2fbf844d33d8ea6c9292e524",
+      "boards/shields/takmak/takmak_right.conf": "d5dd765a8a8ba3f16b6a8f9ea04146c9b339e2f25a20735c33c69cef1fdf67b2",
+      "boards/shields/takmak/takmak_right.overlay": "5d46b5e6df693578fd5d4398edd41a1522db1bdc4fa243af63e81277138f5da7",
+      "src/oled_status_screen.c": "59abc7ebce2cfd345e23f7c18e009f39772ebc0fc4c2668570bd26837c998bcc"
+    }
+  },
+  "dependencies": {
+    "zmk": "ccf20a1f5c1534a197d32279abbe0eaf651099d8",
+    "zephyr": "dacab4875df72109b96cc8977547a0dc04875bcd",
+    "build_image": "zmkfirmware/zmk-build-arm@sha256:edb1c953438c6f720ddb79c3762f3972013b7fbbaf4fff3592fc869983e7afc5"
+  },
+  "validation": {
+    "flash_bytes": 357484,
+    "ram_bytes": 82450,
+    "hardware": [
+      "portrait display",
+      "USB enumeration",
+      "L/R battery display"
+    ],
+    "host": [
+      "4096-pixel rotation",
+      "partial redraw",
+      "disconnect sentinel versus true zero",
+      "early battery events",
+      "five layers and fallback labels",
+      "ASan/UBSan"
+    ],
+    "hardware_reconnect_test": false
+  },
+  "compatibility": "Left-central update only; retain the existing compatible right-peripheral firmware. Not a dongle or TFT firmware."
+}
